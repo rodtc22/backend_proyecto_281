@@ -45,7 +45,10 @@ Ahora necesitamos crear algunas carpetas asi que usaremos
 sequelize init
 ```
 
-### 7. En phpmyadmin creo una base de datos con el nombre `proyecto_inf281`, modifico el archivo `config/config.json`
+### 7. En phpmyadmin creo una base de datos con el nombre `proyecto_inf281`, modifico el archivo `config/config.json`, ademas instalo un paquete para que podemos interactuar con mysql
+```
+npm install -g mysql2
+```
 
 ### 8. Llega el momento de hacer los modelos y migraciones
 1. El modelo va a estar en singular: user
@@ -53,37 +56,36 @@ sequelize init
 
 Migraciones con sequelize
 ```bash
-npx sequelize-cli model:generate --name User --attributes email:string,password:string,status:integer
+sequelize model:generate --name Usuario --attributes ci:string,nombre:string,fecha_nac:date,genero:string,direccion:string,correo:string,telefono:string,nom_usuario:string,contrasenia:string
 ```
 
-Lleva las migraciones a la Base de Datos
+Lleva las migraciones a la Base de Datos, aunque es posible que nos genere un error, por eso hay que seguir con el paso 9 
 ```bash
-npx sequelize-cli db:migrate
+sequelize db:migrate
 ```
 
-
-
-
-
-
-
-
-
-
-<!-- 5. Instalamos babel/core (para poder usar la sintaxis import express)
+### 9. Instalamos babel/core (para poder usar la sintaxis import express)
 ```
-npm i -D @babel/core @babel/cli @babel/plugin-transform-runtime @babel/preset-env
-npm u  @babel/core @babel/cli @babel/plugin-transform-runtime @babel/preset-env
+npm install -D @babel/core @babel/preset-env @babel/cli @babel/node
+npm uninstall  @babel/core @babel/preset-env @babel/cli @babel/node
 ```
-5.1. Creamos el archivo `.babelrc` con el contenido
+Creamos el archivo `.babelrc` con la raiz del proyecto
 ```json
 {
-    "presets": ["@babel/preset-env"],
-    "plugins": ["@babel/plugin-transform-runtime"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": true
+        }
+      }
+    ]
+  ]
 }
 ```
 
-5.2. Modificamos el archivo package.json con la linea
-`"dev": "nodemon --exec babel src/index.js",`
-para poder usar el comando.
-```npm run dev``` -->
+Modificamos el archivo package.json con la linea
+`"dev" : "nodemon --exec babel-node src/index.js"`
+
+

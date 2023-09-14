@@ -1,11 +1,10 @@
-
-
 // IMPORTANDO MODULOS
 import express from "express";
 import dotenv from "dotenv";
 import authRoute from "../src/routes/auth.routes.js";
 
-dotenv.config();
+// dotenv.config();
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
