@@ -62,6 +62,8 @@ sequelize model:generate --name Usuario --attributes ci:string,nombre:string,fec
 Lleva las migraciones a la Base de Datos, aunque es posible que nos genere un error, por eso hay que seguir con el paso 9 
 ```bash
 sequelize db:migrate
+
+sequelize db:migrate:undoall
 ```
 
 ### 9. Instalamos babel/core (para poder usar la sintaxis import express)
