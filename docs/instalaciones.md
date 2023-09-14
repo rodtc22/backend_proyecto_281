@@ -91,3 +91,8 @@ Modificamos el archivo package.json con la linea
 `"dev" : "nodemon --exec babel-node src/index.js"`
 
 
+> es posible que despues de clonar de git, salga error por los paquetes, asi que recomiendo poner
+  ```
+  npm install  mysql2
+  npm install  sequelize sequelize-cli
+  ```
