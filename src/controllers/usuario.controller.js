@@ -1,33 +1,51 @@
-// import usuarioService from "../services/usuario.service";
-import models from "../database/models";
+import usuarioService from "../services/usuario.service";
+// import models from "../database/models";
 
 export default {
   listar: async (req, res) => {
     try {
-      const usuarios = await models.Usuario.findAll();
-      return res.status(200).json({data: usuarios});
+      const usuarios = await usuarioService.getListaUsuario();
+      return res.status(200).json({ data: usuarios });
     } catch (error) {
-      return res.status(500).json({message: error.message})
+      return res.status(500).json({ message: error.message });
     }
   },
   obtener: async (req, res) => {
     try {
-      const id = req.params.id;
-      console.log("idsd ",id)
-      const usuario = await models.Usuario.findByPk(id);
-      return res.status(200).json({data: usuario});
+      const usuario = await usuarioService.getUsuario(req.params.id);
+      return res.status(200).json({ data: usuario });
     } catch (error) {
-      return res.status(500).json({message: error.message})
+      return res.status(500).json({ message: error.message });
     }
   },
-  agregar: (req, res) => {
-    console.log(req.query)
-    return res.status(200).json({ message: "controller usuario agregar" });
+  agregar: async (req, res) => {
+    try {
+      const usuario = await usuarioService.agregarUsuario(req.query);
+      return res
+        .status(201)
+        .json({ message: "El usuario se ha agregado: ", data: usuario });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
   },
-  editar: (req, res) => {
-    return res.status(200).json({ message: "controller usuario editar" });
+  editar: async (req, res) => {
+    try {
+      let can = await usuarioService.editarUsuario(req.params.id, req.query);
+      if (can)
+        return res.status(200).json({ message: "El usuario se ha editado" });
+      return res.status(404).json({ message: "El usuario no existe" });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
   },
-  borrar: (req, res) => {
-    return res.status(200).json({ message: "controller usuario borrar" });
+  borrar: async (req, res) => {
+    try {
+      let can = await usuarioService.borrarUsuario(req.params.id);
+      if (can)
+        return res.status(200).json({ message: "El usuario se ha borrado" });
+      return res.status(404).json({ message: "El usuario no existe" });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
   },
 };
