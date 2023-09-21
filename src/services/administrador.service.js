@@ -1,15 +1,18 @@
 // para acceder a la tabla usuarios debemos recurrir al modelo
 import {Administrador, Usuario} from "../database/models"
+import actividadService from "./actividad.service";
+import institucion_ayudaService from "./institucion_ayuda.service";
+import recursoService from "./recurso.service";
 
 export default {
-  getListaAdministrador: async () => {
+  listarAdministrador: async () => {
     return await Administrador.findAll({
       include: [
         {model: Usuario},
       ]
     });
   },
-  getAdministrador: async (id) => {
+  obtenerAdministrador: async (id) => {
     return await Administrador.findByPk(id, {
       include: [
         {model: Usuario}
@@ -32,6 +35,9 @@ export default {
   borrarAdministrador: async (id) => {
     const administrador = Usuario.findByPk(id);
     if (!administrador) return false;
+    await actividadService.borrarActividadAdministrador(id);
+    await recursoService.borrarRecursoAdministrador(id);
+    await institucion_ayudaService.borrarInstitucion_Ayuda(id);
     await Administrador.destroy({
       where: {
         id_administrador: id,

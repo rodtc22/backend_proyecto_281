@@ -4,7 +4,7 @@ export default {
   listar: async (req, res) => {
     try {
       const administradores =
-        await administradorService.getListaAdministrador();
+        await administradorService.listarAdministrador();
       return res.status(200).json({ data: administradores });
     } catch (error) {
       return res.status(500).json({ message: error.message });
@@ -12,7 +12,7 @@ export default {
   },
   obtener: async (req, res) => {
     try {
-      const administrador = await administradorService.getAdministrador(
+      const administrador = await administradorService.obtenerAdministrador(
         req.params.id
       );
       return res.status(200).json({ data: administrador });

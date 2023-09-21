@@ -6,10 +6,10 @@ import administradorService from "./administrador.service";
 
 
 export default {
-  getListaUsuario: async () => {
+  listarUsuario: async () => {
     return await Usuario.findAll();
   },
-  getUsuario: async (id) => {
+  obtenerUsuario: async (id) => {
     return await Usuario.findByPk(id);
   },
   agregarUsuario: async (nuevoUsuario) => {

@@ -3,7 +3,7 @@ import usuarioService from "../services/usuario.service";
 export default {
   listar: async (req, res) => {
     try {
-      const usuarios = await usuarioService.getListaUsuario();
+      const usuarios = await usuarioService.listarUsuario();
       return res.status(200).json({ data: usuarios });
     } catch (error) {
       return res.status(500).json({ message: error.message });
@@ -11,7 +11,7 @@ export default {
   },
   obtener: async (req, res) => {
     try {
-      const usuario = await usuarioService.getUsuario(req.params.id);
+      const usuario = await usuarioService.obtenerUsuario(req.params.id);
       return res.status(200).json({ data: usuario });
     } catch (error) {
       return res.status(500).json({ message: error.message });
