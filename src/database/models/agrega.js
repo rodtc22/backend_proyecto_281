@@ -11,15 +11,25 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Agrega.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Agrega.belongsTo(models.Contacto, {
         foreignKey: "id_contacto",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Agrega.init(
     {
+      id_agrega: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER
+      },
       id_usuario: DataTypes.INTEGER,
       id_contacto: DataTypes.INTEGER,
     },

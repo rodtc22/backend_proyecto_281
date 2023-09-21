@@ -11,21 +11,33 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Contacto.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Contacto.belongsToMany(models.Alerta, {
         through: "Notifica",
         foreignKey: "id_contacto",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Contacto.belongsToMany(models.Usuario, {
         through: "Agrega",
         foreignKey: "id_contacto",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Contacto.init(
     {
+      id_contacto: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       nombre_contacto: DataTypes.STRING,
       fecha_ac: DataTypes.DATE,
       telefono: DataTypes.STRING,

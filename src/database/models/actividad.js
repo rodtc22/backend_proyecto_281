@@ -11,11 +11,19 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Actividad.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Actividad.init(
     {
+      id_actividad: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       nombre_actividad: DataTypes.STRING,
       tipo: DataTypes.STRING,
       descripcion: DataTypes.STRING,

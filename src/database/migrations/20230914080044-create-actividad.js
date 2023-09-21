@@ -31,7 +31,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Administradors',
-          key: 'id_administrador'
+          key: 'id_administrador',
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         }
       },
       createdAt: {

@@ -23,6 +23,8 @@ module.exports = {
         references: {
           model: "Usuarios",
           key: "id_usuario",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         },
       },
       createdAt: {

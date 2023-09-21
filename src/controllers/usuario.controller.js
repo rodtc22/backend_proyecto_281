@@ -1,5 +1,4 @@
 import usuarioService from "../services/usuario.service";
-// import models from "../database/models";
 
 export default {
   listar: async (req, res) => {

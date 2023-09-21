@@ -11,15 +11,25 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Notifica.belongsTo(models.Contacto, {
         foreignKey: "id_contacto",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Notifica.belongsTo(models.Alerta, {
         foreignKey: "id_alerta",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Notifica.init(
     {
+      id_notifica: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       id_contacto: DataTypes.INTEGER,
       id_alerta: DataTypes.INTEGER,
     },

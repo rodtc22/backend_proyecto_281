@@ -14,6 +14,8 @@ module.exports = {
         references: {
           model: "Contactos",
           key: "id_contacto",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         },
       },
       id_alerta: {
@@ -21,6 +23,8 @@ module.exports = {
         references: {
           model: "Alertas",
           key: "id_alerta",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         },
       },
       createdAt: {

@@ -5,8 +5,14 @@ module.exports = {
     await queryInterface.createTable('Usuario_normals', {
       id_usuario: {
         allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
+        // autoIncrement: true,
+        // primaryKey: true,
+        references: {
+          model: "Usuarios",
+          key: "id_usuario",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
+        },
         type: Sequelize.INTEGER
       },
       estado: {
@@ -19,7 +25,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Administradors',
-          key: 'id_administrador'
+          key: 'id_administrador',
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         }
       },
       createdAt: {

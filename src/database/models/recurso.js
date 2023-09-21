@@ -11,16 +11,25 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Recurso.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Recurso.hasMany(models.Comentario, {
         foreignKey: "id_recurso",
-        onDelete: "CASCADE",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Recurso.init(
     {
+      id_recurso: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       titulo: DataTypes.STRING,
       tipo: DataTypes.STRING,
       descripcion: DataTypes.STRING,

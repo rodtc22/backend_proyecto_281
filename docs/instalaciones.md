@@ -63,7 +63,7 @@ Lleva las migraciones a la Base de Datos, aunque es posible que nos genere un er
 ```bash
 sequelize db:migrate
 
-sequelize db:migrate:undoall
+sequelize db:migrate:undo:all
 ```
 
 ### 9. Instalamos babel/core (para poder usar la sintaxis import express)

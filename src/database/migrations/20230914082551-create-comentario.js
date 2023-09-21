@@ -23,6 +23,8 @@ module.exports = {
         references: {
           model: "Administradors",
           key: "id_administrador",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         },
       },
       id_recurso: {
@@ -30,6 +32,8 @@ module.exports = {
         references: {
           model: "Recursos",
           key: "id_recurso",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         },
       },
       id_usuario: {
@@ -37,6 +41,8 @@ module.exports = {
         references: {
           model: "Usuarios",
           key: "id_usuario",
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         },
       },
       createdAt: {

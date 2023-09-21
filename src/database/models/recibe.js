@@ -11,15 +11,25 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Recibe.belongsTo(models.Institucion_Ayuda, {
         foreignKey: "id_inst_ayuda",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Recibe.belongsTo(models.Alerta, {
         foreignKey: "id_alerta",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Recibe.init(
     {
+      id_recibe: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       id_inst_ayuda: DataTypes.INTEGER,
       id_alerta: DataTypes.INTEGER,
     },

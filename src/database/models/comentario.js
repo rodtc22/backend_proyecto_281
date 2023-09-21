@@ -9,15 +9,31 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Comentario.belongsTo(models.Usuario, { foreignKey: "id_usuario" });
+      models.Comentario.belongsTo(models.Usuario, {
+        foreignKey: "id_usuario",
+        onDelete: "cascade",
+        onUpdate: "cascade",
+      });
       models.Comentario.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
+        onDelete: "cascade",
+        onUpdate: "cascade",
       });
-      models.Comentario.belongsTo(models.Recurso, { foreignKey: "id_recurso" });
+      models.Comentario.belongsTo(models.Recurso, {
+        foreignKey: "id_recurso",
+        onDelete: "cascade",
+        onUpdate: "cascade",
+      });
     }
   }
   Comentario.init(
     {
+      id_comentario: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       fecha: DataTypes.DATE,
       descripcion: DataTypes.STRING,
       estado: DataTypes.BOOLEAN,

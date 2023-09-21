@@ -11,11 +11,26 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Usuario_normal.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
+      });
+
+      models.Usuario_normal.belongsTo(models.Usuario, {
+        foreignKey: "id_usuario",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
     }
   }
   Usuario_normal.init(
     {
+      id_usuario: {
+        allowNull: false,
+        // autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+        
+      },
       estado: DataTypes.STRING,
       fecha_registro: DataTypes.DATE,
       id_administrador: DataTypes.INTEGER,

@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Institucion_Ayuda.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Institucion_Ayuda.belongsToMany(models.Alerta, {
@@ -21,6 +23,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Institucion_Ayuda.init(
     {
+      id_inst_ayuda: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       nombre_institucion: DataTypes.STRING,
       telefono: DataTypes.STRING,
       descripcion: DataTypes.STRING,

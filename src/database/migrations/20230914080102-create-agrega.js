@@ -3,7 +3,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Agregas', {
-      id: {
+      id_agrega: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -13,14 +13,18 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: 'Usuarios',
-          key: 'id_usuario'
+          key: 'id_usuario',
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         }
       },
       id_contacto: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Contactos',
-          key: 'id_contacto'
+          key: 'id_contacto',
+          onDelete: 'cascade',
+          onUpdate: 'cascade',
         }
       },
       createdAt: {

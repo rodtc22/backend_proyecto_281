@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Alerta.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
+        onDelete: 'cascade',
+        onUpdate: 'cascade',
       });
 
       models.Alerta.belongsToMany(models.Contacto, {
@@ -26,6 +28,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Alerta.init(
     {
+      id_alerta: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       fecha: DataTypes.DATE,
       hora: DataTypes.DATE,
       ubicacion: DataTypes.STRING,
