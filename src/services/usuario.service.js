@@ -2,8 +2,10 @@
 import { Usuario } from "../database/models";
 import usuario_normalService from "./usuario_normal.service";
 import administradorService from "./administrador.service";
-
-
+import denunciaService from "./denuncia.service";
+import contactoService from "./contacto.service";
+import alertaService from "./alerta.service";
+import comentarioService from "./comentario.service";
 
 export default {
   listarUsuario: async () => {
@@ -28,8 +30,12 @@ export default {
   borrarUsuario: async (id) => {
     const usuario = Usuario.findByPk(id);
     if (!usuario) return false;
-    usuario_normalService.borrarUsuario_normal(id);
     administradorService.borrarAdministrador(id);
+    usuario_normalService.borrarUsuario_normal(id);
+    denunciaService.borrarDenunciaUsuario(id);
+    contactoService.borrarContactoUsuario(id);
+    alertaService.borrarAlertaUsuario(id);
+    comentarioService.borrarComentarioUsuario(id);
     await Usuario.destroy({
       where: {
         id_usuario: id,

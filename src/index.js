@@ -14,6 +14,7 @@ import denunciaRoute from "../src/routes/denuncia.routes.js";
 import contactoRoute from "../src/routes/contacto.routes.js";
 import comentarioRoute from "../src/routes/comentario.routes.js";
 import alertaRoute from "../src/routes/alerta.routes.js";
+import rodrixRoute from "../src/routes/rodrix.routes.js";
 
 
 dotenv.config();

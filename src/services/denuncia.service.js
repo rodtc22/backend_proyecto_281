@@ -1,26 +1,32 @@
-import {Denuncia} from "../database/models"
-import denunciaService from "./denuncia.service";
+import {Denuncia, Usuario} from "../database/models"
+import models from "../database/models"
 
 export default {
     listarDenuncia: async () => {
-        return await Denuncia.findAll({
+        return await models.Denuncia.findAll({
             include: [
-                
+                {model : Usuario}
             ]
         });
     },
     agregarDenuncia: async (nuevoDenuncia) => {
         return await Denuncia.create({
-            id_denuncia: nuevoDenuncia.id_denuncia,
+            nombre_victima: nuevoDenuncia.nombre_victima,
+            nombre_agresor: nuevoDenuncia.nombre_agresor,
+            tipo_violencia: nuevoDenuncia.tipo_violencia,
+            tipo_denuncia: nuevoDenuncia.tipo_denuncia,
+            fecha: new Date().toISOString(),
+            descripcion: nuevoDenuncia.descripcion,
+            pruebas: nuevoDenuncia.pruebas,
+            ubicacion: nuevoDenuncia.ubicacion,
             estado: nuevoDenuncia.estado,
-            fecha_registro: new Date().toISOString(),
-            id_administrador: nuevoDenuncia.id_administrador,
+            id_usuario: nuevoDenuncia.id_usuario,
         });
     },
     obtenerDenuncia: async (id) => {
         return await Denuncia.findByPk(id, {
             include: [
-                
+                {model : Usuario}
             ]
         });
     },
@@ -40,6 +46,23 @@ export default {
         await Denuncia.destroy({
             where: {
                 id_denuncia: id
+            },
+        });
+        return true;
+    },
+
+    borrarDenunciaUsuario: async (id) => {
+        await Denuncia.destroy({
+            where: {
+                id_usuario: id
+            },
+        });
+        return true;
+    },
+    listarDenunciaUsuario: async (id) => {
+        await Denuncia.destroy({
+            where: {
+                id_usuario: id
             },
         });
         return true;

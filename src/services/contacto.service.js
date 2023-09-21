@@ -1,24 +1,20 @@
-import {Contacto} from "../database/models"
-import contactoService from "./contacto.service";
+import {Contacto, Usuario} from "../database/models"
 
 export default {
     listarContacto: async () => {
         return await Contacto.findAll({
             include: [
+                {model: Usuario}
             ]
         });
     },
     agregarContacto: async (nuevoContacto) => {
-        return await Contacto.create({
-            id_contacto: nuevoContacto.id_contacto,
-            estado: nuevoContacto.estado,
-            fecha_registro: new Date().toISOString(),
-            id_administrador: nuevoContacto.id_administrador,
-        });
+        return await Contacto.create(nuevoContacto);
     },
     obtenerContacto: async (id) => {
         return await Contacto.findByPk(id, {
             include: [
+                {model: Usuario}
             ]
         });
     },
@@ -38,6 +34,24 @@ export default {
         await Contacto.destroy({
             where: {
                 id_contacto: id
+            },
+        });
+        return true;
+    },
+
+    listarContactoUsuario: async (id) => {
+        await Contacto.findAll({
+            where: {
+                id_usuario: id
+            },
+        });
+        return true;
+    },
+    
+    borrarContactoUsuario: async (id) => {
+        await Contacto.destroy({
+            where: {
+                id_usuario: id
             },
         });
         return true;
