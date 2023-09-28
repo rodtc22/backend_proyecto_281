@@ -1,4 +1,4 @@
-### login usuario
+### LOGIN USUARIO
 POST http://127.0.0.1:3000/api/auth/login/
 Content-Type: application/json
 Accept: application/json
@@ -8,5 +8,5 @@ Accept: application/json
     "contrasenia": "cris1234"
 }
 
-### registrar usuario
+### LISTAR USUARIOS
 GET http://127.0.0.1:3000/api/usuario
