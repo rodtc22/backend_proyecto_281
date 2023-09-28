@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const alerta = await alertaService.agregarAlerta(req.query);
+      const alerta = await alertaService.agregarAlerta(req.body);
       return res
         .status(201)
         .json({ message: "La alerta se ha agregado: ", data: alerta });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await alertaService.editarAlerta(req.params.id, req.query);
+      let can = await alertaService.editarAlerta(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "La alerta se ha editado" });
       return res.status(404).json({ message: "La alerta no existe" });

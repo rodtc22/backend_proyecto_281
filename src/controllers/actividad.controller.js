@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const actividad = await actividadService.agregarActividad(req.query);
+      const actividad = await actividadService.agregarActividad(req.body);
       return res
         .status(201)
         .json({ message: "La actividad se ha agregado: ", data: actividad });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await actividadService.editarActividad(req.params.id, req.query);
+      let can = await actividadService.editarActividad(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "La actividad se ha editado" });
       return res.status(404).json({ message: "La actividad no existe" });

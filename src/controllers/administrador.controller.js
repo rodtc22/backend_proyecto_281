@@ -23,7 +23,7 @@ export default {
   agregar: async (req, res) => {
     try {
       const administrador = await administradorService.agregarAdministrador(
-        req.query
+        req.body
       );
       return res
         .status(200)
@@ -39,7 +39,7 @@ export default {
     try {
       let can = await administradorService.editarAdministrador(
         req.params.id,
-        req.query
+        req.body
       );
       if (can)
         return res

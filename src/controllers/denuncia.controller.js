@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const denuncia = await denunciaService.agregarDenuncia(req.query);
+      const denuncia = await denunciaService.agregarDenuncia(req.body);
       return res
         .status(201)
         .json({ message: "La denuncia se ha agregado: ", data: denuncia });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await denunciaService.editarDenuncia(req.params.id, req.query);
+      let can = await denunciaService.editarDenuncia(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "La denuncia se ha editado" });
       return res.status(404).json({ message: "La denuncia no existe" });

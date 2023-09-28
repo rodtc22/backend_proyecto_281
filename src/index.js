@@ -1,6 +1,7 @@
 // IMPORTANDO MODULOS
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import authRoute from "../src/routes/auth.routes.js";
 import usuarioRoute from "../src/routes/usuario.routes.js";
@@ -22,9 +23,10 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json()); 
+app.use(cors());
 
 // Habilitamos las rutas
-// app.use("/api", authRoute); 
+app.use("/api", authRoute); 
 app.use("/api", usuarioRoute);
 app.use("/api", administradorRoute);
 app.use("/api", usuario_normalRoute);

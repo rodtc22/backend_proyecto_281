@@ -13,7 +13,7 @@ export default {
   agregar: async (req, res) => {
     try {
       const usuario_normal = await usuario_normalService.agregarUsuario_normal(
-        req.query
+        req.body
       );
       return res
         .status(200)
@@ -39,7 +39,7 @@ export default {
     try {
       let can = await usuario_normalService.editarUsuario_normal(
         req.params.id,
-        req.query
+        req.body
       );
       if (can)
         return res

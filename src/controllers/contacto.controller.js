@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const contacto = await contactoService.agregarContacto(req.query);
+      const contacto = await contactoService.agregarContacto(req.body);
       return res
         .status(201)
         .json({ message: "El contacto se ha agregado: ", data: contacto });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await contactoService.editarContacto(req.params.id, req.query);
+      let can = await contactoService.editarContacto(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "El contacto se ha editado" });
       return res.status(404).json({ message: "El contacto no existe" });

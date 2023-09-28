@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const comentario = await comentarioService.agregarComentario(req.query);
+      const comentario = await comentarioService.agregarComentario(req.body);
       return res
         .status(201)
         .json({ message: "El comentario se ha agregado: ", data: comentario });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await comentarioService.editarComentario(req.params.id, req.query);
+      let can = await comentarioService.editarComentario(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "El comentario se ha editado" });
       return res.status(404).json({ message: "El comentario no existe" });

@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const evaluacion = await evaluacionService.agregarEvaluacion(req.query);
+      const evaluacion = await evaluacionService.agregarEvaluacion(req.body);
       return res
         .status(201)
         .json({ message: "La evaluacion se ha agregado: ", data: evaluacion });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await evaluacionService.editarEvaluacion(req.params.id, req.query);
+      let can = await evaluacionService.editarEvaluacion(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "La evaluacion se ha editado" });
       return res.status(404).json({ message: "La evaluacion no existe" });

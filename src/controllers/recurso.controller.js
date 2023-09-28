@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const recurso = await recursoService.agregarRecurso(req.query);
+      const recurso = await recursoService.agregarRecurso(req.body);
       return res
         .status(201)
         .json({ message: "El recurso se ha agregado: ", data: recurso });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await recursoService.editarRecurso(req.params.id, req.query);
+      let can = await recursoService.editarRecurso(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "El recurso se ha editado" });
       return res.status(404).json({ message: "El recurso no existe" });

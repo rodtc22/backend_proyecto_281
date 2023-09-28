@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const usuario = await usuarioService.agregarUsuario(req.query);
+      const usuario = await usuarioService.agregarUsuario(req.body);
       return res
         .status(201)
         .json({ message: "El usuario se ha agregado: ", data: usuario });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await usuarioService.editarUsuario(req.params.id, req.query);
+      let can = await usuarioService.editarUsuario(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "El usuario se ha editado" });
       return res.status(404).json({ message: "El usuario no existe" });

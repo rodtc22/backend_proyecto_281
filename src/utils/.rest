@@ -1,11 +1,12 @@
-POST http://127.0.0.1:5432/api/usuario
+### login usuario
+POST http://127.0.0.1:3000/api/auth/login/
 Content-Type: application/json
+Accept: application/json
 
 {
-    "name": "rodrigo",
-    "edad": 24,
-    "lenguajes": ["c++", "java", "python"]
+    "correo": "cris@gmail.com",
+    "contrasenia": "cris1234"
 }
 
-
-GET http://127.0.0.1:5432/api/usuario
+### registrar usuario
+GET http://127.0.0.1:3000/api/usuario

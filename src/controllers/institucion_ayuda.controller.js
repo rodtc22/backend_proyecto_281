@@ -19,7 +19,7 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const institucion_ayuda = await institucion_ayudaService.agregarInstitucion_Ayuda(req.query);
+      const institucion_ayuda = await institucion_ayudaService.agregarInstitucion_Ayuda(req.body);
       return res
         .status(201)
         .json({ message: "La institucion_ayuda se ha agregado: ", data: institucion_ayuda });
@@ -29,7 +29,7 @@ export default {
   },
   editar: async (req, res) => {
     try {
-      let can = await institucion_ayudaService.editarInstitucion_Ayuda(req.params.id, req.query);
+      let can = await institucion_ayudaService.editarInstitucion_Ayuda(req.params.id, req.body);
       if (can)
         return res.status(200).json({ message: "La institucion_ayuda se ha editado" });
       return res.status(404).json({ message: "La institucion_ayuda no existe" });
