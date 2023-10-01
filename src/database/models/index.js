@@ -12,7 +12,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || "development"; // le generamos su variable de entorno
 
 // const config = require(__dirname + "/../../config/config.json")[env]; // mejoraremos esto con el que cree yo: sequelizeConfig.js
-import configuracion from "../../config/sequelizeConfig";
+import configuracion from "./../../config/sequelizeConfig";
 const config = configuracion[env]; // usamos el environment
 
 const db = {};
