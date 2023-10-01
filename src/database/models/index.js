@@ -1,3 +1,6 @@
+// GENERADO POR SEQUELIZE PERO MODIFICADO POR RODRIX PARA CONECTAR 
+// A BASE DE DATOS USANDO CONSTANTES Y VARIABLES DE ENTORNO
+
 "use strict";
 
 const fs = require("fs");
@@ -5,8 +8,13 @@ const path = require("path");
 const Sequelize = require("sequelize");
 const process = require("process");
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../../config/config.json")[env];
+
+const env = process.env.NODE_ENV || "development"; // le generamos su variable de entorno
+
+// const config = require(__dirname + "/../../config/config.json")[env]; // mejoraremos esto con el que cree yo: sequelizeConfig.js
+import configuracion from "../../config/sequelizeConfig";
+const config = configuracion[env]; // usamos el environment
+
 const db = {};
 
 let sequelize;

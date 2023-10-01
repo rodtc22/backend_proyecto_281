@@ -1,6 +1,5 @@
 // IMPORTANDO MODULOS
 import express from "express";
-import dotenv from "dotenv";
 import cors from "cors";
 
 import authRoute from "../src/routes/auth.routes.js";
@@ -15,12 +14,12 @@ import denunciaRoute from "../src/routes/denuncia.routes.js";
 import contactoRoute from "../src/routes/contacto.routes.js";
 import comentarioRoute from "../src/routes/comentario.routes.js";
 import alertaRoute from "../src/routes/alerta.routes.js";
-import rodrixRoute from "../src/routes/rodrix.routes.js";
+import constants from "./utils/constants.js";
 
-
-dotenv.config();
-const PORT = process.env.PORT || 3000;
 const app = express();
+
+const PORT_SERVER = constants.SERVER.PORT;
+const HOST_SERVER = constants.SERVER.HOST;
 
 app.use(express.json()); 
 app.use(cors());
@@ -39,6 +38,6 @@ app.use("/api", contactoRoute);
 app.use("/api", comentarioRoute);
 app.use("/api", alertaRoute);
 
-app.listen(PORT, () => {
-    console.log(`Servidor iniciado en el puerto http://127.0.0.1:${PORT}`);
+app.listen(PORT_SERVER, () => {
+    console.log(`Servidor iniciado en el puerto http://${HOST_SERVER}:${PORT_SERVER}`);
 });

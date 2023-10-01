@@ -1,3 +1,23 @@
+### LISTAR USUARIOS
+GET http://127.0.0.1:3000/api/usuario
+
+### AGREGAR USUARIO
+POST http://127.0.0.1:3000/api/usuario
+Content-Type: application/json
+Accept: application/json
+
+{
+	"ci": "10000",
+	"nombre": "lourdes",
+	"fecha_nac": "1998-11-17",
+	"genero": "femenino",
+	"direccion": "loayza",
+	"correo": "lourdes@hotmail.com",
+	"telefono": "1000",
+	"nombre_usuario": "lou",
+	"contrasenia": "loul1234"
+}
+
 ### LOGIN USUARIO
 POST http://127.0.0.1:3000/api/auth/login/
 Content-Type: application/json
@@ -7,6 +27,3 @@ Accept: application/json
     "correo": "cris@gmail.com",
     "contrasenia": "cris1234"
 }
-
-### LISTAR USUARIOS
-GET http://127.0.0.1:3000/api/usuario

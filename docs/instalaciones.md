@@ -96,3 +96,40 @@ Modificamos el archivo package.json con la linea
   npm install  mysql2
   npm install  sequelize sequelize-cli
   ```
+
+### 10. Para poder conectar con las bases de datos de manera cool, hacemos lo siguiente
+1. Creamos un archivo de configuracion llamada `sequelizeConfig.js` para sustituir el `config.json`, en la carpeta `./src/config`, gracias a eso podemos poner distintos parametros para manejar BD's en modo desarrollo o produccion
+
+2. Modificamos el archivo `./src/database/models/index.js` indiciando que tome mi nueva configuracion
+```js
+const env = process.env.NODE_ENV || "development"; // le generamos su variable de entorno llamada NODE_ENV
+```
+```js
+// tomamos la nueva configuracion, descartando la anterior
+import configuracion from "../../config/sequelizeConfig";
+const config = configuracion[env]; // usamos el environment
+```
+
+3. En la carpeta `./src/utils` creo el archivo `constants.js` para definir valores constantes para todo mi proyecto, ahi voy a definir si va a tomar los valores de mis variables de entorno, pero si no existen, que utilice unas que tengo por defecto.
+
+> Notemos que ahi tenemos que importar dotenv, para que rescate en ese archivo las variables de entorno
+
+4. En el archivo `.env` agregamos las variables (Hemos alterado los valores para que no se tomen los originales)
+```python
+SERVER_HOST=127.0.0.1
+SERVER_PORT=3000
+
+JWT_TOKEN_RODRIX=eeeeeo
+
+MYSQL_ADDON_DB=b3hlwi8pnw7fk0tig9t
+MYSQL_ADDON_HOST=b3hlwieifijqd9te-mysql.services.clever-cloud.com
+MYSQL_ADDON_PASSWORD=BdShbTV123sdfg32jFx
+MYSQL_ADDON_PORT=3308
+MYSQL_ADDON_URI=mysql://ucookqg5nboew1se:BdShbTV47qdSi0few5ljieivw7fk0tig9te-mysql.services.clever-cloud.com:3308/b3hbdfieivw7fk0ti9te
+MYSQL_ADDON_USER=ucookqg5nbf928uyhrs
+MYSQL_ADDON_VERSION=8.0
+
+NODE_ENV=development  #esto se cambia para decir que vamos a conectar a la BD de development o production o test, solo es cambiar esto
+```
+Desde este punto agrego .env al archivo .gitignore por seguridad
+
