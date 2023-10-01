@@ -45,4 +45,29 @@ export default {
     });
     return true;
   },
+  buscaPorIdUsuario: async (id_u) => {
+    let ans = await Administrador.findAll({
+      include: [
+        {
+          model: Usuario,
+          where: {
+            id_usuario : id_u
+          }
+        }
+      ],
+      attributes: ["id_administrador", "rol"]
+    });
+    
+    
+    const dato = ans[0];
+    if (!dato)  return null;
+    
+    const admin = {
+      "id_administrador" : dato.dataValues.id_administrador,
+      "rol" : dato.dataValues.rol,
+      "Usuario" : dato.dataValues.Usuario.dataValues,
+    }
+    
+    return admin; // retorna el adminitrador o null;
+  }
 };

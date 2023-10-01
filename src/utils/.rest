@@ -24,8 +24,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "correo": "cris@gmail.com",
-    "contrasenia": "cris1234"
+    "correo": "choco@gmail.com",
+    "contrasenia": "choco1234"
 }
 
 ### AGREGAR CONTACTO
