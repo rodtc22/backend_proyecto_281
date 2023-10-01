@@ -27,3 +27,33 @@ Accept: application/json
     "correo": "cris@gmail.com",
     "contrasenia": "cris1234"
 }
+
+### AGREGAR CONTACTO
+POST http://127.0.0.1:3000/api/contacto
+Content-Type: application/json
+Accept: application/json
+
+{
+	"nombre_contacto": "rosa",
+	"telefono": "5687",
+	"id_usuario": "4"
+}
+
+### EDITAR CONTACTO DE USUARIO
+PUT http://127.0.0.1:3000/api/contacto/13/usuario/4
+Content-Type: application/json
+Accept: application/json
+
+{
+	"nombre_contacto": "carmen",
+	"telefono": "76545",
+	"id_usuario": "4"
+}
+
+
+### LISTAR CONTACTO DE USUARIO
+GET http://127.0.0.1:3000/api/contacto/usuario/4
+
+### LISTAR CONTACTOS
+DELETE http://127.0.0.1:3000/api/contacto/15/usuario/4
+

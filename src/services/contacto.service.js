@@ -8,7 +8,7 @@ export default {
             ]
         });
     },
-    agregarContacto: async (nuevoContacto) => {
+    agregarContacto: async (nuevoContacto) => {      
         return await Contacto.create(nuevoContacto);
     },
     obtenerContacto: async (id) => {
@@ -40,20 +40,30 @@ export default {
     },
 
     listarContactoUsuario: async (id) => {
-        await Contacto.findAll({
+        const datos = await Contacto.findAll({
             where: {
                 id_usuario: id
             },
         });
-        return true;
+        return datos;
     },
     
-    borrarContactoUsuario: async (id) => {
-        await Contacto.destroy({
+    borrarContactoUsuario: async (id_u, id_c) => {
+        const datos = await Contacto.destroy({
             where: {
-                id_usuario: id
+                id_usuario: id_u,
+                id_contacto: id_c
             },
         });
-        return true;
+        return datos > 0;
     },
+    editarContactoUsuario: async (id_u, id_c, editContacto) => {
+        const contacto = await Contacto.update(editContacto, {
+            where: {
+                id_usuario: id_u,
+                id_contacto: id_c
+            }
+        });
+        return true;
+    }
 };
