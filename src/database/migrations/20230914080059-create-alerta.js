@@ -24,10 +24,9 @@ module.exports = {
       id_usuario: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Usuarios',
+          model: 'Usuario_normals',
           key: 'id_usuario',
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         }
       },
       createdAt: {

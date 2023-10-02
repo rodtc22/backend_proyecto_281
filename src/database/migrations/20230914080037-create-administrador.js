@@ -15,7 +15,6 @@ module.exports = {
           model: "Usuarios",
           key: "id_usuario",
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         },
       },
       rol: {

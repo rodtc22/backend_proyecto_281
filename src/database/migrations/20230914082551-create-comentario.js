@@ -24,7 +24,6 @@ module.exports = {
           model: "Administradors",
           key: "id_administrador",
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         },
       },
       id_recurso: {
@@ -33,16 +32,14 @@ module.exports = {
           model: "Recursos",
           key: "id_recurso",
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         },
       },
       id_usuario: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Usuarios",
+          model: "Usuario_normals",
           key: "id_usuario",
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         },
       },
       createdAt: {

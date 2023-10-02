@@ -9,16 +9,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Institucion_Ayuda.belongsTo(models.Administrador, {
-        foreignKey: "id_administrador",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Institucion_Ayuda.belongsTo(models.Administrador, {
+      //   foreignKey: "id_administrador",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Institucion_Ayuda.belongsToMany(models.Alerta, {
-        through: "Recibe",
-        foreignKey: "id_inst_ayuda",
-      });
+      // models.Institucion_Ayuda.belongsToMany(models.Alerta, {
+      //   through: "Recibe",
+      //   foreignKey: "id_inst_ayuda",
+      // });
     }
   }
   Institucion_Ayuda.init(

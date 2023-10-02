@@ -4,6 +4,7 @@ import usuarioController from "../controllers/usuario.controller";
 const Route = Router()
 
 //declaramos los endpoints
+
 Route.get('/usuario', usuarioController.listar);
 Route.post('/usuario', usuarioController.agregar);
 Route.get('/usuario/:id', usuarioController.obtener);

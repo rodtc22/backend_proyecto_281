@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Actividad.belongsTo(models.Administrador, {
-        foreignKey: "id_administrador",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Actividad.belongsTo(models.Administrador, {
+      //   foreignKey: "id_administrador",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
     }
   }
   Actividad.init(

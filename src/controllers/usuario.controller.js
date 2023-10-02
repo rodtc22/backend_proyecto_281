@@ -42,7 +42,7 @@ export default {
       let can = await usuarioService.borrarUsuario(req.params.id);
       if (can)
         return res.status(200).json({ message: "El usuario se ha borrado" });
-      return res.status(404).json({ message: "El usuario no existe" });
+      return res.status(400).json({ message: "El usuario no existe" });
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }

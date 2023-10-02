@@ -36,7 +36,6 @@ module.exports = {
           model: 'Administradors',
           key: 'id_administrador',
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         }
       },
       createdAt: {

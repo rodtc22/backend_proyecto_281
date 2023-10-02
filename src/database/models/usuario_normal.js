@@ -12,13 +12,15 @@ module.exports = (sequelize, DataTypes) => {
       models.Usuario_normal.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
         onDelete: 'cascade',
-        onUpdate: 'cascade',
       });
 
       models.Usuario_normal.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
         onDelete: 'cascade',
-        onUpdate: 'cascade',
+      });
+      models.Usuario_normal.hasMany(models.Contacto, {
+        foreignKey: "id_usuario",
+        onDelete: 'cascade',
       });
     }
   }

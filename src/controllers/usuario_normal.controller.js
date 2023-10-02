@@ -15,12 +15,16 @@ export default {
       const usuario_normal = await usuario_normalService.agregarUsuario_normal(
         req.body
       );
-      return res
-        .status(200)
-        .json({
+      if (usuario_normal) {
+        return res.status(200).json({
           message: "El Usuario_normal se ha agregado",
           data: usuario_normal,
         });
+      } else {
+        return res.status(400).json({
+          error: "El Usuario_normal no se ha agregado",
+        });
+      }
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }

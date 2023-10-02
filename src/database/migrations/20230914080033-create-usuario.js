@@ -11,6 +11,7 @@ module.exports = {
       },
       ci: {
         type: Sequelize.STRING,
+        unique: true,
       },
       nombre: {
         type: Sequelize.STRING,
@@ -26,6 +27,7 @@ module.exports = {
       },
       correo: {
         type: Sequelize.STRING,
+        unique: true
       },
       telefono: {
         type: Sequelize.STRING,
@@ -33,6 +35,7 @@ module.exports = {
       nombre_usuario: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       contrasenia: {
         type: Sequelize.STRING,

@@ -15,7 +15,6 @@ module.exports = {
           model: "Contactos",
           key: "id_contacto",
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         },
       },
       id_alerta: {
@@ -24,7 +23,6 @@ module.exports = {
           model: "Alertas",
           key: "id_alerta",
           onDelete: 'cascade',
-          onUpdate: 'cascade',
         },
       },
       createdAt: {

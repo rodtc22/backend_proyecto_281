@@ -9,52 +9,48 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Usuario.hasMany(models.Evaluacion, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Usuario.hasMany(models.Evaluacion, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Usuario.hasMany(models.Contacto, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      
 
-      models.Usuario.hasMany(models.Alerta, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Usuario.hasMany(models.Alerta, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Usuario.hasMany(models.Denuncia, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Usuario.hasMany(models.Denuncia, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Usuario.belongsToMany(models.Contacto, {
-        through: "Agrega",
-        foreignKey: "id_usuario",
-      });
+      // models.Usuario.belongsToMany(models.Contacto, {
+      //   through: "Agrega",
+      //   foreignKey: "id_usuario",
+      // });
 
-      models.Usuario.hasMany(models.Comentario, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Usuario.hasMany(models.Comentario, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Usuario.hasOne(models.Administrador, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Usuario.hasOne(models.Administrador, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Usuario.hasOne(models.Usuario_normal, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Usuario.belongsTo(models.Usuario_normal, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
     }
   }
   Usuario.init(

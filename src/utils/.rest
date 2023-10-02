@@ -1,21 +1,33 @@
-### LISTAR USUARIOS
-GET http://127.0.0.1:3000/api/usuario
+### CONTACTOS DE UN USUARIO
+GET http://127.0.0.1:3000/api/contacto/usuario/41
+
+### ELIMINAR USUARIO NORMAL 41
+DELETE http://127.0.0.1:3000/api/usuario_normal/41
+
+### LISTAR USUARIO NORMAL 41
+GET http://127.0.0.1:3000/api/usuario_normal/41
+
+### MOSTRAR USUARIO NORMAL 41
+GET http://127.0.0.1:3000/api/usuario_normal/41
+
+### MOSTRAR USUARIO 41
+GET http://127.0.0.1:3000/api/usuario/41
 
 ### AGREGAR USUARIO
-POST http://127.0.0.1:3000/api/usuario
+POST http://127.0.0.1:3000/api/usuario_normal
 Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "10000",
-	"nombre": "lourdes",
-	"fecha_nac": "1998-11-17",
+	"ci": "1010",
+	"nombre": "lady",
+	"fecha_nac": "1978-11-17",
 	"genero": "femenino",
-	"direccion": "loayza",
-	"correo": "lourdes@hotmail.com",
-	"telefono": "1000",
-	"nombre_usuario": "lou",
-	"contrasenia": "loul1234"
+	"direccion": "murillo",
+	"correo": "lady@gmail.com",
+	"telefono": "1010",
+	"nombre_usuario": "lady",
+	"contrasenia": "lady1234"
 }
 
 ### LOGIN USUARIO
@@ -24,8 +36,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "correo": "choco@gmail.com",
-    "contrasenia": "choco1234"
+    "correo": "xxx@gmail.com",
+    "contrasenia": "xxx1234"
 }
 
 ### AGREGAR CONTACTO
@@ -34,9 +46,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"nombre_contacto": "rosa",
-	"telefono": "5687",
-	"id_usuario": "4"
+	"nombre_contacto": "karla",
+	"telefono": "2",
+	"id_usuario": "41"
 }
 
 ### EDITAR CONTACTO DE USUARIO
@@ -57,3 +69,5 @@ GET http://127.0.0.1:3000/api/contacto/usuario/4
 ### LISTAR CONTACTOS
 DELETE http://127.0.0.1:3000/api/contacto/15/usuario/4
 
+### olvide mi password
+GET http://127.0.0.1:3000/api/auth/olvide_contrasenia/rodrigoticonacoronel.22@gmail.com

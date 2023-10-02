@@ -7,6 +7,6 @@ const Route = Router()
 //Declaramos los endpoints
 Route.post('/auth/login', authController.login);
 Route.post('/auth/registro', authController.registro);
-Route.post('/auth/logout', authController.logout);
+// Route.post('/auth/prueba', authController.logout);
 
 export default Route;

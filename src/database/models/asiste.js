@@ -9,17 +9,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Asiste.belongsTo(models.Administrador, {
-        foreignKey: "id_administrador",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Asiste.belongsTo(models.Administrador, {
+      //   foreignKey: "id_administrador",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
 
-      models.Asiste.belongsTo(models.Denuncia, {
-        foreignKey: "id_denuncia",
-        onDelete: 'cascade',
-        onUpdate: 'cascade',
-      });
+      // models.Asiste.belongsTo(models.Denuncia, {
+      //   foreignKey: "id_denuncia",
+      //   onDelete: 'cascade',
+      //   onUpdate: 'cascade',
+      // });
     }
   }
   Asiste.init(

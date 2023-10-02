@@ -1,6 +1,10 @@
+import bcrypt from "bcrypt";
+import nodemailer from "nodemailer";
+
 // para acceder a la tabla usuarios debemos recurrir al modelo
 import { Usuario} from "../database/models";
 import administradorService from "../services/administrador.service";
+import usuarioService from "./usuario.service";
 
 export default {
   verificaCredenciales: async (credenciales) => {
@@ -18,13 +22,14 @@ export default {
 
     if (filas) {
       const usuario = filas[0].dataValues;
-      
+      credenciales.rol = "usuario_normal";
+            
       const id_usuario = usuario.id_usuario;
       credenciales.id_usuario = id_usuario;
-      credenciales.rol = "usuario_normal";
 
-      if (usuario.contrasenia == credenciales.contrasenia) {
-        
+      //validar correos iguales
+      const iguales = await bcrypt.compare(credenciales.contrasenia, usuario.contrasenia);
+      if (iguales) {
         // buscamos si es administrador o no para ponerle su rol
         const uadmin = await administradorService.buscaPorIdUsuario(id_usuario); 
         if (uadmin) {
@@ -37,10 +42,11 @@ export default {
 
       }
     }
-    console.log(ans);
     return ans;
   },
   agregarNuevoUsuario: async (nuevoUsuario) => {
-    return await Usuario.create(nuevoUsuario);
+    await usuarioService.agregarUsuario(nuevoUsuario);
+    return true;
   },
+
 };
