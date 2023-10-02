@@ -11,19 +11,19 @@ module.exports = {
       },
       id_contacto: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "Contactos",
-          key: "id_contacto",
-          onDelete: 'cascade',
-        },
+        // references: {
+        //   model: "Contactos",
+        //   key: "id_contacto",
+        //   onDelete: 'cascade',
+        // },
       },
       id_alerta: {
         type: Sequelize.INTEGER,
-        references: {
-          model: "Alertas",
-          key: "id_alerta",
-          onDelete: 'cascade',
-        },
+        // references: {
+        //   model: "Alertas",
+        //   key: "id_alerta",
+        //   onDelete: 'cascade',
+        // },
       },
       createdAt: {
         allowNull: false,

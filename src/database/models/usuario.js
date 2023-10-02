@@ -46,11 +46,10 @@ module.exports = (sequelize, DataTypes) => {
       //   onUpdate: 'cascade',
       // });
 
-      // models.Usuario.belongsTo(models.Usuario_normal, {
-      //   foreignKey: "id_usuario",
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      models.Usuario.belongsTo(models.Usuario_normal, {
+        foreignKey: "id_usuario",
+        onDelete: 'cascade',
+      });
     }
   }
   Usuario.init(
@@ -60,7 +59,6 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
-        
       },
       ci: DataTypes.STRING,
       nombre: DataTypes.STRING,
