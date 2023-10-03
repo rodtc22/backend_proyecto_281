@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Contacto.belongsTo(models.Usuario_normal, {
         foreignKey: "id_usuario",
-        onDelete: 'cascade',
+        onDelete: 'CASCADE',
       });
 
       // models.Contacto.belongsToMany(models.Alerta, {

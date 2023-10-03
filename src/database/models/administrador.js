@@ -44,11 +44,10 @@ module.exports = (sequelize, DataTypes) => {
       //   onUpdate: 'cascade',
       // });
 
-      // models.Administrador.belongsTo(models.Usuario, {
-      //   foreignKey: "id_usuario", 
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      models.Administrador.belongsTo(models.Usuario, {
+        foreignKey: "id_usuario", 
+        onDelete: 'CASCADE',
+      });
     }
   }
   Administrador.init(

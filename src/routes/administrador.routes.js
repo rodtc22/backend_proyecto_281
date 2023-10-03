@@ -10,4 +10,5 @@ Route.get('/administrador/:id', administradorController.obtener);
 Route.put('/administrador/:id', administradorController.editar);
 Route.delete('/administrador/:id', administradorController.borrar);
 
+Route.get('/administrador/usuario/:id', administradorController.obtenerIdUsuario);
 export default Route;

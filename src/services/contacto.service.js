@@ -57,6 +57,14 @@ export default {
         });
         return datos > 0;
     },
+    borrarTodoContactoUsuario: async (id_u) => {
+        const datos = await Contacto.destroy({
+            where: {
+                id_usuario: id_u,
+            },
+        });
+        return datos > 0;
+    },
     editarContactoUsuario: async (id_u, id_c, editContacto) => {
         const contacto = await Contacto.update(editContacto, {
             where: {

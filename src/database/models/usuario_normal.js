@@ -9,29 +9,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Usuario_normal.belongsTo(models.Administrador, {
-        foreignKey: "id_administrador",
-        onDelete: 'cascade',
-      });
-
       models.Usuario_normal.belongsTo(models.Usuario, {
         foreignKey: "id_usuario",
-        onDelete: 'cascade',
+        onDelete: 'CASCADE'
       });
       models.Usuario_normal.hasMany(models.Contacto, {
         foreignKey: "id_usuario",
-        onDelete: 'cascade',
+        onDelete: 'CASCADE',
       });
+      // models.Usuario_normal.belongsTo(models.Administrador, {
+      //   foreignKey: "id_administrador",
+      //   onDelete: 'CASCADE',
+      // });
     }
   }
   Usuario_normal.init(
     {
       id_usuario: {
         allowNull: false,
-        // autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
-        
       },
       estado: DataTypes.STRING,
       fecha_registro: DataTypes.DATE,

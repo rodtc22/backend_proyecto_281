@@ -1,4 +1,4 @@
-import {MYSQL} from "../utils/constants";
+import {MYSQL} from "./constants";
 
 const configuracion = {
   development: {

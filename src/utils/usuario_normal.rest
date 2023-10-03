@@ -1,0 +1,51 @@
+### CONTACTOS DE UN USUARIO
+GET http://127.0.0.1:3000/api/contacto/usuario/12
+
+### ELIMINAR USUARIO NORMAL 12
+DELETE http://127.0.0.1:3000/api/usuario_normal/12
+
+### MOSTRAR USUARIO NORMAL 12
+GET http://127.0.0.1:3000/api/usuario_normal/13
+
+### MOSTRAR USUARIO 12
+GET http://127.0.0.1:3000/api/usuario/12
+
+### ELIMINAR USUARIO 12
+DELETE http://127.0.0.1:3000/api/usuario/12
+
+
+### AGREGAR USUARIO NORMAL
+POST http://127.0.0.1:3000/api/usuario_normal
+Content-Type: application/json
+Accept: application/json
+
+{
+	"ci": "yyy",
+	"nombre": "yyy",
+	"fecha_nac": "1978-11-17",
+	"genero": "masculino",
+	"direccion": "murillo",
+	"correo": "yyy@gmail.com",
+	"telefono": "1",
+	"nombre_usuario": "yyy",
+	"contrasenia": "yyy@1111"
+}
+
+### AGREGAR USUARIO NORMAL
+PUT http://127.0.0.1:3000/api/usuario_normal/13
+Content-Type: application/json
+Accept: application/json
+
+{
+	"ci": "asdf",
+	"nombre": "yasdfyy",
+	"fecha_nac": "1978-11-17",
+	"genero": "masculino",
+	"direccion": "murillo",
+	"correo": "yasdfyy@gmail.com",
+	"telefono": "1",
+	"nombre_usuario": "yasdfyy",
+	"contrasenia": "yyasdfy@1111",
+	"estado" : "desactivado"
+}
+

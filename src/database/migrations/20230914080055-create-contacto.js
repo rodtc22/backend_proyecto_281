@@ -21,10 +21,10 @@ module.exports = {
       id_usuario: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Usuario_normals',
-          key: 'id_usuario',
-          onDelete: 'cascade',
-        }
+          model: "usuario_normals",
+          key: "id_usuario",
+        },
+        onDelete: "CASCADE",  
       },
       createdAt: {
         allowNull: false,
@@ -39,4 +39,5 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Contactos');
   }
+  
 };

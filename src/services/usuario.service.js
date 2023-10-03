@@ -53,12 +53,6 @@ export default {
   borrarUsuario: async (id) => {
     const usuario = Usuario.findByPk(id);
     if (!usuario) return false;
-    // administradorService.borrarAdministrador(id);
-    // usuario_normalService.borrarUsuario_normal(id);
-    // denunciaService.borrarDenunciaUsuario(id);
-    // contactoService.borrarContactoUsuario(id);
-    // alertaService.borrarAlertaUsuario(id);
-    // comentarioService.borrarComentarioUsuario(id);
     await Usuario.destroy({
       where: {
         id_usuario: id,

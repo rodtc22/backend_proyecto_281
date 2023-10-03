@@ -9,13 +9,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.Usuario.hasOne(models.Usuario_normal, {
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE'
+      });
+      models.Usuario.hasOne(models.Administrador, {
+        foreignKey: "id_usuario",
+        onDelete: 'cascade',
+      });
+
       // models.Usuario.hasMany(models.Evaluacion, {
       //   foreignKey: "id_usuario",
       //   onDelete: 'cascade',
       //   onUpdate: 'cascade',
       // });
-
-      
 
       // models.Usuario.hasMany(models.Alerta, {
       //   foreignKey: "id_usuario",
@@ -40,16 +47,12 @@ module.exports = (sequelize, DataTypes) => {
       //   onUpdate: 'cascade',
       // });
 
-      // models.Usuario.hasOne(models.Administrador, {
+
+
+      // models.Usuario.belongsTo(models.Usuario_normal, {
       //   foreignKey: "id_usuario",
       //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
       // });
-
-      models.Usuario.belongsTo(models.Usuario_normal, {
-        foreignKey: "id_usuario",
-        onDelete: 'cascade',
-      });
     }
   }
   Usuario.init(

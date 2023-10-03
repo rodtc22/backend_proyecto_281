@@ -3,8 +3,7 @@ import administradorService from "../services/administrador.service";
 export default {
   listar: async (req, res) => {
     try {
-      const administradores =
-        await administradorService.listarAdministrador();
+      const administradores = await administradorService.listarAdministrador();
       return res.status(200).json({ data: administradores });
     } catch (error) {
       return res.status(500).json({ message: error.message });
@@ -25,12 +24,16 @@ export default {
       const administrador = await administradorService.agregarAdministrador(
         req.body
       );
-      return res
-        .status(200)
-        .json({
+      if (administrador) {
+        return res.status(200).json({
           message: "El administrador se ha agregado: ",
           data: administrador,
         });
+      } else {
+        return res.status(400).json({
+          error: "El administrador no se ha agregado: ",
+        });
+      }
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }
@@ -45,7 +48,7 @@ export default {
         return res
           .status(200)
           .json({ message: "El administrador se ha editado" });
-      return res.status(404).json({ message: "El administrador no existe" });
+      return res.status(404).json({ message: "El administrador no se ha editado" });
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }
@@ -62,4 +65,15 @@ export default {
       return res.status(500).json({ message: error.message });
     }
   },
+
+  obtenerIdUsuario: async (req, res) => {
+    try {
+      const administrador = await administradorService.buscaPorIdUsuario(
+        req.params.id
+      );
+      return res.status(200).json({ data: administrador });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  }
 };

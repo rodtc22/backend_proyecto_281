@@ -11,19 +11,9 @@ module.exports = {
       },
       id_usuario: {
         type: Sequelize.INTEGER,
-        // references: {
-        //   model: 'Usuarios',
-        //   key: 'id_usuario',
-        //   onDelete: 'cascade',
-        // }
       },
       id_contacto: {
         type: Sequelize.INTEGER,
-        // references: {
-        //   model: 'Contactos',
-        //   key: 'id_contacto',
-        //   onDelete: 'cascade',
-        // }
       },
       createdAt: {
         allowNull: false,

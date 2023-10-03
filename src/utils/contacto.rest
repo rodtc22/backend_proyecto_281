@@ -1,0 +1,41 @@
+### LOGIN USUARIO
+POST http://127.0.0.1:3000/api/auth/login/
+Content-Type: application/json
+Accept: application/json
+
+{
+    "correo": "xxx@gmail.com",
+    "contrasenia": "xxx1234"
+}
+
+### AGREGAR CONTACTO
+POST http://127.0.0.1:3000/api/contacto
+Content-Type: application/json
+Accept: application/json
+
+{
+	"nombre_contacto": "c",
+	"telefono": "c",
+	"id_usuario": "12"
+}
+
+### EDITAR CONTACTO DE USUARIO
+PUT http://127.0.0.1:3000/api/contacto/13/usuario/4
+Content-Type: application/json
+Accept: application/json
+
+{
+	"nombre_contacto": "carmen",
+	"telefono": "76545",
+	"id_usuario": "4"
+}
+
+
+### LISTAR CONTACTO DE USUARIO
+GET http://127.0.0.1:3000/api/contacto/usuario/4
+
+### LISTAR CONTACTOS
+DELETE http://127.0.0.1:3000/api/contacto/15/usuario/4
+
+### olvide mi password
+GET http://127.0.0.1:3000/api/auth/olvide_contrasenia/rodrigoticonacoronel.22@gmail.com
