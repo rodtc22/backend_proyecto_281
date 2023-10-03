@@ -37,6 +37,7 @@ export default {
     const existe = await existeUsuario(nuevoUsuario);
     if (existe) return null;
     nuevoUsuario.contrasenia = await encriptar(nuevoUsuario.contrasenia);
+    console.log(nuevoUsuario);
     return await Usuario.create(nuevoUsuario);
   },
   editarUsuario: async (id, editUsuario) => {

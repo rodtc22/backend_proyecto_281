@@ -2,10 +2,10 @@
 GET http://127.0.0.1:3000/api/administrador
 
 ### ELIMINAR ADMINISTRADOR 
-DELETE http://127.0.0.1:3000/api/administrador/4
+DELETE http://127.0.0.1:3000/api/administrador/5
 
 ### OBTENER ADMINISTRADOR
-GET http://127.0.0.1:3000/api/administrador/4
+GET http://127.0.0.1:3000/api/administrador/5
 
 
 ### OBTENER USUARIO
@@ -21,16 +21,16 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "4444",
-	"nombre": "gustavo",
+	"ci": "5555",
+	"nombre": "zzz",
 	"fecha_nac": "2000-09-06",
-	"genero": "gustavo",
+	"genero": "zzz",
 	"direccion": "los andes",
-	"correo": "gustavo@gmail.com",
-	"telefono": "4444",
-	"nombre_usuario": "gustavo",
-	"contrasenia": "gustavo@4444",
-	"rol": "administrador"
+	"correo": "zzz@gmail.com",
+	"telefono": "5555",
+	"nombre_usuario": "zzz",
+	"contrasenia": "zzz@zzz",
+	"rol": "colaborador"
 }
 
 ### EDITAR ADMINISTRADOR
@@ -40,13 +40,13 @@ Accept: application/json
 
 {
 	"ci": "4444",
-	"nombre": "gustavo",
+	"nombre": "zzz",
 	"fecha_nac": "1999-09-06",
 	"genero": "Masculino",
 	"direccion": "Los andes",
-	"correo": "gustavo@gmail.com",
+	"correo": "zzz@gmail.com",
 	"telefono": "4444",
-	"nombre_usuario": "gustavo",
-	"contrasenia": "gustavo@4444",
+	"nombre_usuario": "zzz",
+	"contrasenia": "zzz@4444",
 	"rol": "colaborador"
 }

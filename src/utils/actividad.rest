@@ -1,0 +1,45 @@
+### LISTAR actividad
+GET http://127.0.0.1:3000/api/actividad
+
+### ELIMINAR actividad 
+DELETE http://127.0.0.1:3000/api/actividad/4
+
+### OBTENER actividad
+GET http://127.0.0.1:3000/api/actividad/6
+
+### ELIMINAR actividad 
+DELETE http://127.0.0.1:3000/api/actividad/administrador/3
+
+### OBTENER actividad
+GET http://127.0.0.1:3000/api/actividad/administrador/6
+
+
+### AGREGAR actividad
+POST http://127.0.0.1:3000/api/actividad
+Content-Type: application/json
+Accept: application/json
+
+{
+	"nombre_actividad": "act3",
+	"tipo": "feria",
+	"descripcion": "Dedicado para las personas que",
+	"fecha_ini": "2023-11-01",
+	"fecha_fin": "2023-11-01",
+	"hora": "12:30",
+	"id_administrador": "6"
+}
+
+### EDITAR actividad
+PUT http://127.0.0.1:3000/api/actividad/1
+Content-Type: application/json
+Accept: application/json
+
+{
+	"nombre_actividad": "feria no a la violencia",
+	"tipo": "feria",
+	"descripcion": "Dedicado para las personas que",
+	"fecha_ini": "2023-09-01",
+	"fecha_fin": "2023-09-01",
+	"hora": "00:23",
+	"id_administrador": "2"
+}

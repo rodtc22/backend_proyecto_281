@@ -1,11 +1,14 @@
+### LISTAR USUARIO
+GET http://127.0.0.1:3000/api/usuario
+
 ### LOGIN USUARIO
 POST http://127.0.0.1:3000/api/auth/login/
 Content-Type: application/json
 Accept: application/json
 
 {
-    "correo": "xxx@gmail.com",
-    "contrasenia": "xxx1234"
+    "correo": "rodrigo@gmail.com",
+    "contrasenia": "rodrigo@1111"
 }
 
 ### AGREGAR CONTACTO
@@ -34,8 +37,5 @@ Accept: application/json
 ### LISTAR CONTACTO DE USUARIO
 GET http://127.0.0.1:3000/api/contacto/usuario/4
 
-### LISTAR CONTACTOS
+### ELIMINAR CONTACTOS
 DELETE http://127.0.0.1:3000/api/contacto/15/usuario/4
-
-### olvide mi password
-GET http://127.0.0.1:3000/api/auth/olvide_contrasenia/rodrigoticonacoronel.22@gmail.com

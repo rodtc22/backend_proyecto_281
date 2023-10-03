@@ -14,8 +14,16 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Volcando datos para la tabla proyecto_inf281.actividads: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla proyecto_inf281.actividads: ~4 rows (aproximadamente)
 DELETE FROM `actividads`;
+INSERT INTO `actividads` (`id_actividad`, `nombre_actividad`, `tipo`, `descripcion`, `fecha_ini`, `fecha_fin`, `hora`, `id_administrador`, `createdAt`, `updatedAt`) VALUES
+	(1, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-08-31 20:00:00', '2023-08-31 20:00:00', '2023-10-03 00:23:00', 2, '2023-10-03 15:30:22', '2023-10-03 15:36:25'),
+	(2, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 2, '2023-10-03 15:32:38', '2023-10-03 15:32:38'),
+	(5, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 3, '2023-10-03 15:44:46', '2023-10-03 15:44:46'),
+	(6, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 3, '2023-10-03 15:44:46', '2023-10-03 15:44:46'),
+	(10, 'act1', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 6, '2023-10-03 15:57:06', '2023-10-03 15:57:06'),
+	(11, 'act2', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 6, '2023-10-03 15:57:09', '2023-10-03 15:57:09'),
+	(12, 'act3', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 6, '2023-10-03 15:57:12', '2023-10-03 15:57:12');
 
 -- Volcando datos para la tabla proyecto_inf281.administradors: ~4 rows (aproximadamente)
 DELETE FROM `administradors`;
@@ -23,7 +31,8 @@ INSERT INTO `administradors` (`id_administrador`, `id_usuario`, `rol`, `createdA
 	(1, 13, 'administrador', '2023-10-03 14:12:15', '2023-10-03 14:16:13'),
 	(2, 14, 'colaborador', '2023-10-03 14:13:06', '2023-10-03 14:13:06'),
 	(3, 15, 'colaborador', '2023-10-03 14:13:21', '2023-10-03 14:13:21'),
-	(4, 16, 'colaborador', '2023-10-03 14:14:07', '2023-10-03 14:17:00');
+	(4, 16, 'colaborador', '2023-10-03 14:14:07', '2023-10-03 14:17:00'),
+	(6, 25, 'colaborador', '2023-10-03 15:56:48', '2023-10-03 15:56:48');
 
 -- Volcando datos para la tabla proyecto_inf281.agregas: ~0 rows (aproximadamente)
 DELETE FROM `agregas`;
@@ -99,7 +108,8 @@ INSERT INTO `usuarios` (`id_usuario`, `ci`, `nombre`, `fecha_nac`, `genero`, `di
 	(13, '1111', 'rodrigo', '1999-09-05 20:00:00', 'Masculino', 'Los andes', 'rodrigo@gmail.com', '1111', 'rodrigo', '$2b$10$KzFGUHCsPsGJsm7ZALNXzO8k.qNExzJ2FIM9wLzFkKE.oxGnyi66G', '2023-10-03 14:12:15', '2023-10-03 14:16:13'),
 	(14, '2222', 'eleazar', '2000-09-05 20:00:00', 'eleazar', 'los andes', 'eleazar@gmail.com', '2222', 'eleazar', '$2b$10$oQP2M/9Ifmgqn0zGTja5fuG/Fwl8hMVeo3IISyxh0CCuoN0m1P99m', '2023-10-03 14:13:06', '2023-10-03 14:13:06'),
 	(15, '3333', 'noemi', '2000-09-05 20:00:00', 'noemi', 'los andes', 'noemi@gmail.com', '3333', 'noemi', '$2b$10$teb6NSq8H.cxW.4Iwvgf8.BlJcHkZOE34KxJe0jbuuEz4MBpRSAoy', '2023-10-03 14:13:21', '2023-10-03 14:13:21'),
-	(16, '4444', 'gustavo', '1999-09-05 20:00:00', 'Masculino', 'Los andes', 'gustavo@gmail.com', '4444', 'gustavo', '$2b$10$F0iY/Z8xg5ER.RVgtb41Vu0ZPfd5rPGF7.M1Ba5QDQpXDYwdqA0Sy', '2023-10-03 14:14:07', '2023-10-03 14:17:00');
+	(16, '4444', 'gustavo', '1999-09-05 20:00:00', 'Masculino', 'Los andes', 'gustavo@gmail.com', '4444', 'gustavo', '$2b$10$F0iY/Z8xg5ER.RVgtb41Vu0ZPfd5rPGF7.M1Ba5QDQpXDYwdqA0Sy', '2023-10-03 14:14:07', '2023-10-03 14:17:00'),
+	(25, '5555', 'zzz', '2000-09-05 20:00:00', 'zzz', 'los andes', 'zzz@gmail.com', '5555', 'zzz', '$2b$10$HYhro.rP4SLzhuJlOsCdE.3KAJ./tTBkJ1fBKGxkXk9yRRJLttApq', '2023-10-03 15:56:48', '2023-10-03 15:56:48');
 
 -- Volcando datos para la tabla proyecto_inf281.usuario_normals: ~12 rows (aproximadamente)
 DELETE FROM `usuario_normals`;

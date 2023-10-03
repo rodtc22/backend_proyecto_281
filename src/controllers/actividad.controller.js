@@ -47,4 +47,22 @@ export default {
       return res.status(500).json({ message: error.message });
     }
   },
+  obtenerActividadAdministrador: async (req, res) => {
+    try {
+      const actividades = await actividadService.listarActividadAdministrador(req.params.id);
+      return res.status(200).json({ data: actividades });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+  borrarActividadAdministrador: async (req, res) => {
+    try {
+      let can = await actividadService.borrarActividadAdministrador(req.params.id);
+      if (can)
+        return res.status(200).json({ message: "La actividad se ha borrado" });
+      return res.status(404).json({ message: "La actividad no existe" });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
 };

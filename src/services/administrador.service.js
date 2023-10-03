@@ -35,6 +35,8 @@ export default {
     const nusuario = await usuarioService.agregarUsuario(usuario);
     if (nusuario == null) return false;
 
+    
+
     const administrador = {
       id_usuario: nusuario.id_usuario,
       rol: nuevoAdministrador.rol,
@@ -73,13 +75,14 @@ export default {
       },
     });
 
+    //ELIMINACION EN CASCADA
     const idu = administrador.dataValues.id_usuario;
     await usuarioService.borrarUsuario(idu);
-
-    return true;
-    // await actividadService.borrarActividadAdministrador(id);
+    await actividadService.borrarActividadAdministrador(id);
     // await recursoService.borrarRecursoAdministrador(id);
     // await institucion_ayudaService.borrarInstitucion_Ayuda(id);
+
+    return true;
   },
   buscaPorIdUsuario: async (id_u) => {
     let ans = await Administrador.findAll({
