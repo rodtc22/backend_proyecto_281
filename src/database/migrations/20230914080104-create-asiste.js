@@ -11,9 +11,19 @@ module.exports = {
       },
       id_administrador: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "administradors",
+          key: "id_administrador",
+        },
+        onDelete: "CASCADE",
       },
       id_denuncia: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "denuncias",
+          key: "id_denuncia",
+        },
+        onDelete: "CASCADE", 
       },
       createdAt: {
         allowNull: false,

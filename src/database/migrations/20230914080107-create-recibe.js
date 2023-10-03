@@ -11,9 +11,19 @@ module.exports = {
       },
       id_inst_ayuda: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "institucion_ayudas",
+          key: "id_inst_ayuda",
+        },
+        onDelete: "CASCADE",  
       },
       id_alerta: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "alertas",
+          key: "id_alerta",
+        },
+        onDelete: "CASCADE", 
       },
       createdAt: {
         allowNull: false,

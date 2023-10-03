@@ -26,7 +26,9 @@ CREATE TABLE IF NOT EXISTS `actividads` (
   `id_administrador` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_actividad`)
+  PRIMARY KEY (`id_actividad`),
+  KEY `id_administrador` (`id_administrador`),
+  CONSTRAINT `actividads_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `administradors` (`id_administrador`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -41,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `administradors` (
   PRIMARY KEY (`id_administrador`),
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `administradors_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
 
@@ -52,7 +54,11 @@ CREATE TABLE IF NOT EXISTS `agregas` (
   `id_contacto` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_agrega`)
+  PRIMARY KEY (`id_agrega`),
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_contacto` (`id_contacto`),
+  CONSTRAINT `agregas_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario_normals` (`id_usuario`) ON DELETE CASCADE,
+  CONSTRAINT `agregas_ibfk_2` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id_contacto`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -67,7 +73,9 @@ CREATE TABLE IF NOT EXISTS `alertas` (
   `id_usuario` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_alerta`)
+  PRIMARY KEY (`id_alerta`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `alertas_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario_normals` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -79,7 +87,11 @@ CREATE TABLE IF NOT EXISTS `asistes` (
   `id_denuncia` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_asiste`)
+  PRIMARY KEY (`id_asiste`),
+  KEY `id_administrador` (`id_administrador`),
+  KEY `id_denuncia` (`id_denuncia`),
+  CONSTRAINT `asistes_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `administradors` (`id_administrador`) ON DELETE CASCADE,
+  CONSTRAINT `asistes_ibfk_2` FOREIGN KEY (`id_denuncia`) REFERENCES `denuncias` (`id_denuncia`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -95,7 +107,13 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   `id_usuario` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_comentario`)
+  PRIMARY KEY (`id_comentario`),
+  KEY `id_administrador` (`id_administrador`),
+  KEY `id_recurso` (`id_recurso`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `administradors` (`id_administrador`) ON DELETE CASCADE,
+  CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_recurso`) REFERENCES `recursos` (`id_recurso`) ON DELETE CASCADE,
+  CONSTRAINT `comentarios_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuario_normals` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -112,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `contactos` (
   PRIMARY KEY (`id_contacto`),
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `contactos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario_normals` (`id_usuario`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
 
@@ -131,7 +149,9 @@ CREATE TABLE IF NOT EXISTS `denuncias` (
   `id_usuario` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_denuncia`)
+  PRIMARY KEY (`id_denuncia`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `denuncias_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario_normals` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -145,7 +165,9 @@ CREATE TABLE IF NOT EXISTS `evaluacions` (
   `id_usuario` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_evaluacion`)
+  PRIMARY KEY (`id_evaluacion`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `evaluacions_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario_normals` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -160,7 +182,9 @@ CREATE TABLE IF NOT EXISTS `institucion_ayudas` (
   `id_administrador` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_inst_ayuda`)
+  PRIMARY KEY (`id_inst_ayuda`),
+  KEY `id_administrador` (`id_administrador`),
+  CONSTRAINT `institucion_ayudas_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `administradors` (`id_administrador`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -172,7 +196,11 @@ CREATE TABLE IF NOT EXISTS `notificas` (
   `id_alerta` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_notifica`)
+  PRIMARY KEY (`id_notifica`),
+  KEY `id_contacto` (`id_contacto`),
+  KEY `id_alerta` (`id_alerta`),
+  CONSTRAINT `notificas_ibfk_1` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id_contacto`) ON DELETE CASCADE,
+  CONSTRAINT `notificas_ibfk_2` FOREIGN KEY (`id_alerta`) REFERENCES `alertas` (`id_alerta`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -184,7 +212,11 @@ CREATE TABLE IF NOT EXISTS `recibes` (
   `id_alerta` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_recibe`)
+  PRIMARY KEY (`id_recibe`),
+  KEY `id_inst_ayuda` (`id_inst_ayuda`),
+  KEY `id_alerta` (`id_alerta`),
+  CONSTRAINT `recibes_ibfk_1` FOREIGN KEY (`id_inst_ayuda`) REFERENCES `institucion_ayudas` (`id_inst_ayuda`) ON DELETE CASCADE,
+  CONSTRAINT `recibes_ibfk_2` FOREIGN KEY (`id_alerta`) REFERENCES `alertas` (`id_alerta`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -202,7 +234,9 @@ CREATE TABLE IF NOT EXISTS `recursos` (
   `id_administrador` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
-  PRIMARY KEY (`id_recurso`)
+  PRIMARY KEY (`id_recurso`),
+  KEY `id_administrador` (`id_administrador`),
+  CONSTRAINT `recursos_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `administradors` (`id_administrador`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -234,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `nombre_usuario` (`nombre_usuario`),
   UNIQUE KEY `ci` (`ci`),
   UNIQUE KEY `correo` (`correo`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
 
@@ -247,7 +281,9 @@ CREATE TABLE IF NOT EXISTS `usuario_normals` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   KEY `id_usuario` (`id_usuario`),
-  CONSTRAINT `usuario_normals_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE
+  KEY `id_administrador` (`id_administrador`),
+  CONSTRAINT `usuario_normals_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE,
+  CONSTRAINT `usuario_normals_ibfk_2` FOREIGN KEY (`id_administrador`) REFERENCES `administradors` (`id_administrador`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.

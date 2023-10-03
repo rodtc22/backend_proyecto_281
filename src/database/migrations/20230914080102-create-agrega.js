@@ -11,9 +11,19 @@ module.exports = {
       },
       id_usuario: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "usuario_normals",
+          key: "id_usuario",
+        },
+        onDelete: "CASCADE",  
       },
       id_contacto: {
         type: Sequelize.INTEGER,
+        references: {
+          model: "contactos",
+          key: "id_contacto",
+        },
+        onDelete: "CASCADE", 
       },
       createdAt: {
         allowNull: false,

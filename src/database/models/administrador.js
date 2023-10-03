@@ -15,11 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       //   onUpdate: 'cascade',
       // });
 
-      // models.Administrador.hasMany(models.Actividad, {
-      //   foreignKey: "id_administrador",
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      
 
       // models.Administrador.hasMany(models.Recurso, {
       //   foreignKey: "id_administrador",
@@ -46,6 +42,10 @@ module.exports = (sequelize, DataTypes) => {
 
       models.Administrador.belongsTo(models.Usuario, {
         foreignKey: "id_usuario", 
+        onDelete: 'CASCADE',
+      });
+      models.Administrador.hasMany(models.Actividad, {
+        foreignKey: "id_administrador",
         onDelete: 'CASCADE',
       });
     }
