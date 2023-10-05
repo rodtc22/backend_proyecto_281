@@ -1,4 +1,5 @@
 import { Usuario, Usuario_normal } from "../database/models";
+import administradorService from "./administrador.service";
 import contactoService from "./contacto.service";
 import usuarioService from "./usuario.service";
 
@@ -24,6 +25,10 @@ export default {
   },
   agregarUsuario_normal: async (nuevoUsuario_normal) => {
     const usuario = getUsuario(nuevoUsuario_normal);
+
+    //verificar que exite el adminsitrador
+    const admin = await administradorService.obtenerAdministrador(nuevoUsuario_normal.id_administrador);
+    if (!admin) return;
 
     const nusuario = await usuarioService.agregarUsuario(usuario);
     if (nusuario == null) return false;
@@ -60,6 +65,21 @@ export default {
     await Usuario_normal.destroy({
       where: {
         id_usuario: id,
+      },
+    });
+
+    await usuarioService.borrarUsuario(id);
+    await contactoService.borrarTodoContactoUsuario(id);
+    return true;
+  },
+
+  borrarUsuario_normalAdministrador: async (id) => {
+    let usuario_normal = await Usuario_normal.findByPk(id);
+    if (!usuario_normal) return false;
+
+    await Usuario_normal.destroy({
+      where: {
+        id_administrador: id,
       },
     });
 

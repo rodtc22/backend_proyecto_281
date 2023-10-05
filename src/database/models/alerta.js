@@ -13,16 +13,18 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id_usuario",
         onUpdate: 'CASCADE',
       });
+      
+      models.Alerta.belongsToMany(models.Contacto, {
+        through: models.Notifica,
+        foreignKey: "id_alerta",
+        onDelete: 'CASCADE',
+      });
 
-      // models.Alerta.belongsToMany(models.Contacto, {
-      //   through: "Notifica",
-      //   foreignKey: "id_alerta",
-      // });
-
-      // models.Alerta.belongsToMany(models.Institucion_Ayuda, {
-      //   through: "Recibe",
-      //   foreignKey: "id_alerta",
-      // });
+      models.Alerta.belongsToMany(models.Institucion_Ayuda, {
+        through: models.Recibe,
+        foreignKey: "id_alerta",
+        onDelete: 'CASCADE',
+      });
     }
   }
   Alerta.init(

@@ -1,10 +1,10 @@
-import {Alerta, Usuario} from "../database/models"
+import {Alerta, Usuario_normal} from "../database/models"
 
 export default {
     listarAlerta: async () => {
         return await Alerta.findAll({
             include: [
-                {model: Usuario}
+                {model: Usuario_normal}
             ]
         });
     },
@@ -21,7 +21,7 @@ export default {
     obtenerAlerta: async (id) => {
         return await Alerta.findByPk(id, {
             include: [
-                {model: Usuario}
+                {model: Usuario_normal}
             ]
         });
     },

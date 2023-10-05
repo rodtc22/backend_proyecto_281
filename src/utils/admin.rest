@@ -2,7 +2,7 @@
 GET http://127.0.0.1:3000/api/administrador
 
 ### ELIMINAR ADMINISTRADOR 
-DELETE http://127.0.0.1:3000/api/administrador/7
+DELETE http://127.0.0.1:3000/api/administrador/12
 
 ### OBTENER ADMINISTRADOR
 GET http://127.0.0.1:3000/api/administrador/5

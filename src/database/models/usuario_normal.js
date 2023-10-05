@@ -13,10 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id_usuario",
         onDelete: 'CASCADE'
       });
-      models.Usuario_normal.hasMany(models.Contacto, {
-        foreignKey: "id_usuario",
-        onDelete: 'CASCADE',
-      });
       models.Usuario_normal.belongsTo(models.Administrador, {
         foreignKey: "id_administrador",
         onDelete: 'CASCADE',
@@ -40,10 +36,12 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       });
 
-      // models.Usuario.belongsToMany(models.Contacto, {
-      //   through: "Agrega",
-      //   foreignKey: "id_usuario",
-      // });
+
+      models.Usuario.belongsToMany(models.Contacto, {
+        through: models.Agrega,
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE',
+      });
 
 
 

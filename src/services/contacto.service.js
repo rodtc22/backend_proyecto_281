@@ -1,20 +1,22 @@
-import {Contacto, Usuario} from "../database/models"
+import {Agrega, Contacto, Usuario_normal} from "../database/models"
 
 export default {
     listarContacto: async () => {
         return await Contacto.findAll({
             include: [
-                {model: Usuario}
+                {model: Usuario_normal}
             ]
         });
     },
-    agregarContacto: async (nuevoContacto) => {      
-        return await Contacto.create(nuevoContacto);
+    agregarContacto: async (nuevoContacto) => {
+        const contacto = await Contacto.create(nuevoContacto);
+        await Agrega.create(contacto.dataValues);
+        return contacto;
     },
     obtenerContacto: async (id) => {
         return await Contacto.findByPk(id, {
             include: [
-                {model: Usuario}
+                {model: Usuario_normal}
             ]
         });
     },

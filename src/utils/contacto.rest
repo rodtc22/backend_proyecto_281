@@ -17,25 +17,24 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"nombre_contacto": "aa",
-	"telefono": "aa",
-	"id_usuario": "29"
+	"nombre_contacto": "c",
+	"telefono": "c",
+	"id_usuario": "46"
 }
 
 ### EDITAR CONTACTO DE USUARIO
-PUT http://127.0.0.1:3000/api/contacto/13/usuario/4
+PUT http://127.0.0.1:3000/api/contacto/12/usuario/34
 Content-Type: application/json
 Accept: application/json
 
 {
 	"nombre_contacto": "carmen",
-	"telefono": "76545",
-	"id_usuario": "4"
+	"telefono": "76545"
 }
 
 
 ### LISTAR CONTACTO DE USUARIO
-GET http://127.0.0.1:3000/api/contacto/usuario/4
+GET http://127.0.0.1:3000/api/contacto/usuario/42
 
 ### ELIMINAR CONTACTOS
-DELETE http://127.0.0.1:3000/api/contacto/15/usuario/4
+DELETE http://127.0.0.1:3000/api/contacto/16/usuario/36

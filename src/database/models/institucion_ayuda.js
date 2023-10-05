@@ -14,10 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       });
 
-      // models.Institucion_Ayuda.belongsToMany(models.Alerta, {
-      //   through: "Recibe",
-      //   foreignKey: "id_inst_ayuda",
-      // });
+      models.Institucion_Ayuda.belongsToMany(models.Alerta, {
+        through: models.Recibe,
+        foreignKey: "id_inst_ayuda",
+        onDelete: 'CASCADE',
+      });
     }
   }
   Institucion_Ayuda.init(

@@ -4,6 +4,7 @@ import actividadService from "./actividad.service";
 import institucion_ayudaService from "./institucion_ayuda.service";
 import recursoService from "./recurso.service";
 import usuarioService from "./usuario.service";
+import usuario_normalService from "./usuario_normal.service";
 
 const getUsuario = (administrador) => {
   return {
@@ -34,8 +35,6 @@ export default {
     const usuario = getUsuario(nuevoAdministrador);
     const nusuario = await usuarioService.agregarUsuario(usuario);
     if (nusuario == null) return false;
-
-    
 
     const administrador = {
       id_usuario: nusuario.id_usuario,
@@ -76,8 +75,9 @@ export default {
     });
 
     //ELIMINACION EN CASCADA
-    const idu = administrador.dataValues.id_usuario;
-    await usuarioService.borrarUsuario(idu);
+    const uid = administrador.dataValues.id_usuario;
+    await usuarioService.borrarUsuario(uid);
+    await usuario_normalService.borrarUsuario_normalAdministrador(id);
     await actividadService.borrarActividadAdministrador(id);
     // await recursoService.borrarRecursoAdministrador(id);
     // await institucion_ayudaService.borrarInstitucion_Ayuda(id);

@@ -14,10 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       });
 
-      // models.Denuncia.belongsToMany(models.Administrador, {
-      //   through: "Asiste",
-      //   foreignKey: "id_denuncia",
-      // });
+      models.Denuncia.belongsToMany(models.Administrador, {
+        through: models.Asiste,
+        foreignKey: "id_denuncia",
+        onDelete: 'CASCADE'
+      });
     }
   }
   Denuncia.init(

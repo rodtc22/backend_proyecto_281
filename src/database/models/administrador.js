@@ -9,16 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      
-      
 
-      
-
-      
-      // models.Administrador.belongsToMany(models.Denuncia, {
-      //   through: "Asiste",
-      //   foreignKey: "id_administrador",
-      // });
+      models.Administrador.belongsToMany(models.Denuncia, {
+        through: models.Asiste,
+        foreignKey: "id_administrador",
+        onDelete: 'CASCADE'
+      });
 
       models.Administrador.hasMany(models.Comentario, {
         foreignKey: "id_administrador",
