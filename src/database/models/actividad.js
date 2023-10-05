@@ -34,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Actividad",
+      tableName: "Actividads",
     }
   );
   return Actividad;

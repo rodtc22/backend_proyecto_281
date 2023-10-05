@@ -15,8 +15,8 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- Volcando datos para la tabla proyecto_inf281.actividads: ~4 rows (aproximadamente)
-DELETE FROM `actividads`;
-INSERT INTO `actividads` (`id_actividad`, `nombre_actividad`, `tipo`, `descripcion`, `fecha_ini`, `fecha_fin`, `hora`, `id_administrador`, `createdAt`, `updatedAt`) VALUES
+DELETE FROM `Actividads`;
+INSERT INTO `Actividads` (`id_actividad`, `nombre_actividad`, `tipo`, `descripcion`, `fecha_ini`, `fecha_fin`, `hora`, `id_administrador`, `createdAt`, `updatedAt`) VALUES
 	(1, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-08-31 20:00:00', '2023-08-31 20:00:00', '2023-10-03 00:23:00', 2, '2023-10-03 15:30:22', '2023-10-03 15:36:25'),
 	(2, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 2, '2023-10-03 15:32:38', '2023-10-03 15:32:38'),
 	(5, 'feria no a la violencia', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 3, '2023-10-03 15:44:46', '2023-10-03 15:44:46'),
@@ -26,54 +26,23 @@ INSERT INTO `actividads` (`id_actividad`, `nombre_actividad`, `tipo`, `descripci
 	(12, 'act3', 'feria', 'Dedicado para las personas que', '2023-10-31 20:00:00', '2023-10-31 20:00:00', '2023-10-03 12:30:00', 6, '2023-10-03 15:57:12', '2023-10-03 15:57:12');
 
 -- Volcando datos para la tabla proyecto_inf281.administradors: ~4 rows (aproximadamente)
-DELETE FROM `administradors`;
-INSERT INTO `administradors` (`id_administrador`, `id_usuario`, `rol`, `createdAt`, `updatedAt`) VALUES
+DELETE FROM `Administradors`;
+INSERT INTO `Administradors` (`id_administrador`, `id_usuario`, `rol`, `createdAt`, `updatedAt`) VALUES
 	(1, 13, 'administrador', '2023-10-03 14:12:15', '2023-10-03 14:16:13'),
 	(2, 14, 'colaborador', '2023-10-03 14:13:06', '2023-10-03 14:13:06'),
 	(3, 15, 'colaborador', '2023-10-03 14:13:21', '2023-10-03 14:13:21'),
 	(4, 16, 'colaborador', '2023-10-03 14:14:07', '2023-10-03 14:17:00'),
 	(6, 25, 'colaborador', '2023-10-03 15:56:48', '2023-10-03 15:56:48');
 
--- Volcando datos para la tabla proyecto_inf281.agregas: ~0 rows (aproximadamente)
-DELETE FROM `agregas`;
-
--- Volcando datos para la tabla proyecto_inf281.alertas: ~0 rows (aproximadamente)
-DELETE FROM `alertas`;
-
--- Volcando datos para la tabla proyecto_inf281.asistes: ~0 rows (aproximadamente)
-DELETE FROM `asistes`;
-
--- Volcando datos para la tabla proyecto_inf281.comentarios: ~0 rows (aproximadamente)
-DELETE FROM `comentarios`;
-
--- Volcando datos para la tabla proyecto_inf281.contactos: ~3 rows (aproximadamente)
-DELETE FROM `contactos`;
-INSERT INTO `contactos` (`id_contacto`, `nombre_contacto`, `fecha_ac`, `telefono`, `id_usuario`, `createdAt`, `updatedAt`) VALUES
+DELETE FROM `Contactos`;
+INSERT INTO `Contactos` (`id_contacto`, `nombre_contacto`, `fecha_ac`, `telefono`, `id_usuario`, `createdAt`, `updatedAt`) VALUES
 	(1, 'a', NULL, '1', 12, '2023-10-03 12:35:44', '2023-10-03 12:35:44'),
 	(2, 'b', NULL, 'b', 12, '2023-10-03 12:36:00', '2023-10-03 12:36:00'),
 	(3, 'c', NULL, 'c', 12, '2023-10-03 12:36:04', '2023-10-03 12:36:04');
 
--- Volcando datos para la tabla proyecto_inf281.denuncias: ~0 rows (aproximadamente)
-DELETE FROM `denuncias`;
-
--- Volcando datos para la tabla proyecto_inf281.evaluacions: ~0 rows (aproximadamente)
-DELETE FROM `evaluacions`;
-
--- Volcando datos para la tabla proyecto_inf281.institucion_ayudas: ~0 rows (aproximadamente)
-DELETE FROM `institucion_ayudas`;
-
--- Volcando datos para la tabla proyecto_inf281.notificas: ~0 rows (aproximadamente)
-DELETE FROM `notificas`;
-
--- Volcando datos para la tabla proyecto_inf281.recibes: ~0 rows (aproximadamente)
-DELETE FROM `recibes`;
-
--- Volcando datos para la tabla proyecto_inf281.recursos: ~0 rows (aproximadamente)
-DELETE FROM `recursos`;
-
 -- Volcando datos para la tabla proyecto_inf281.sequelizemeta: ~15 rows (aproximadamente)
-DELETE FROM `sequelizemeta`;
-INSERT INTO `sequelizemeta` (`name`) VALUES
+DELETE FROM `Sequelizemeta`;
+INSERT INTO `Sequelizemeta` (`name`) VALUES
 	('20230914080033-create-usuario.js'),
 	('20230914080037-create-administrador.js'),
 	('20230914080041-create-usuario-normal.js'),
@@ -91,8 +60,8 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 	('20230914082551-create-comentario.js');
 
 -- Volcando datos para la tabla proyecto_inf281.usuarios: ~16 rows (aproximadamente)
-DELETE FROM `usuarios`;
-INSERT INTO `usuarios` (`id_usuario`, `ci`, `nombre`, `fecha_nac`, `genero`, `direccion`, `correo`, `telefono`, `nombre_usuario`, `contrasenia`, `createdAt`, `updatedAt`) VALUES
+DELETE FROM `Usuarios`;
+INSERT INTO `Usuarios` (`id_usuario`, `ci`, `nombre`, `fecha_nac`, `genero`, `direccion`, `correo`, `telefono`, `nombre_usuario`, `contrasenia`, `createdAt`, `updatedAt`) VALUES
 	(1, '1', 'rod', '1978-11-16 20:00:00', 'masculino', 'murillo', 'rod@gmail.com', '1', 'rod', '$2b$10$8l1jk/0jT0ivIfyk2ycAXeg2dbbSRlOiA7aEFjLAFOwfqBSDBFm56', '2023-10-03 12:31:17', '2023-10-03 12:31:17'),
 	(2, 'cris', 'cris', '1978-11-16 20:00:00', 'masculino', 'murillo', 'cris@gmail.com', '1', 'cris', '$2b$10$Gp4o0C5l2AE2udqU8bWJzu3I6HeODKBPqnQpFAO574MFZohBIfyQi', '2023-10-03 12:32:21', '2023-10-03 12:32:21'),
 	(3, 'jorge', 'jorge', '1978-11-16 20:00:00', 'masculino', 'murillo', 'jorge@gmail.com', '1', 'jorge', '$2b$10$IVTaeWGmXFi3Q3PSnue/Cu1pIK.hVWevG8xbFo0xFo9RB8GwQMp8O', '2023-10-03 12:32:35', '2023-10-03 12:32:35'),
@@ -112,8 +81,8 @@ INSERT INTO `usuarios` (`id_usuario`, `ci`, `nombre`, `fecha_nac`, `genero`, `di
 	(25, '5555', 'zzz', '2000-09-05 20:00:00', 'zzz', 'los andes', 'zzz@gmail.com', '5555', 'zzz', '$2b$10$HYhro.rP4SLzhuJlOsCdE.3KAJ./tTBkJ1fBKGxkXk9yRRJLttApq', '2023-10-03 15:56:48', '2023-10-03 15:56:48');
 
 -- Volcando datos para la tabla proyecto_inf281.usuario_normals: ~12 rows (aproximadamente)
-DELETE FROM `usuario_normals`;
-INSERT INTO `usuario_normals` (`id_usuario`, `estado`, `fecha_registro`, `id_administrador`, `createdAt`, `updatedAt`) VALUES
+DELETE FROM `Usuario_normals`;
+INSERT INTO `Usuario_normals` (`id_usuario`, `estado`, `fecha_registro`, `id_administrador`, `createdAt`, `updatedAt`) VALUES
 	(1, 'activo', '2023-10-03 12:31:17', NULL, '2023-10-03 12:31:17', '2023-10-03 12:31:17'),
 	(2, 'activo', '2023-10-03 12:32:21', NULL, '2023-10-03 12:32:21', '2023-10-03 12:32:21'),
 	(3, 'activo', '2023-10-03 12:32:35', NULL, '2023-10-03 12:32:35', '2023-10-03 12:32:35'),

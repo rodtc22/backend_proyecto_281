@@ -25,10 +25,13 @@ export default {
   },
   agregarUsuario_normal: async (nuevoUsuario_normal) => {
     const usuario = getUsuario(nuevoUsuario_normal);
-
-    //verificar que exite el adminsitrador
-    const admin = await administradorService.obtenerAdministrador(nuevoUsuario_normal.id_administrador);
-    if (!admin) return;
+    
+    if (nuevoUsuario_normal.reg == '2') {
+      //verificar que exite el adminsitrador
+      const admin = await administradorService.obtenerAdministrador(nuevoUsuario_normal.id_administrador);
+      if (!admin) return;
+    }
+    
 
     const nusuario = await usuarioService.agregarUsuario(usuario);
     if (nusuario == null) return false;

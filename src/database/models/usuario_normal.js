@@ -43,13 +43,6 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE',
       });
 
-
-
-
-      // models.Usuario.belongsTo(models.Usuario_normal, {
-      //   foreignKey: "id_usuario",
-      //   onDelete: 'cascade',
-      // });
     }
   }
   Usuario_normal.init(
@@ -66,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Usuario_normal",
+      tableName: "Usuario_normals",
     }
   );
   return Usuario_normal;

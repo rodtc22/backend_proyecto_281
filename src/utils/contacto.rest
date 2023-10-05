@@ -17,9 +17,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"nombre_contacto": "c",
-	"telefono": "c",
-	"id_usuario": "46"
+	"nombre_contacto": "cri",
+	"telefono": "cri",
+	"id_usuario": "27"
 }
 
 ### EDITAR CONTACTO DE USUARIO
@@ -38,3 +38,6 @@ GET http://127.0.0.1:3000/api/contacto/usuario/42
 
 ### ELIMINAR CONTACTOS
 DELETE http://127.0.0.1:3000/api/contacto/16/usuario/36
+
+### ELIMINAR CONTACTOS
+GET http://127.0.0.1:3000/api/institucion_ayuda

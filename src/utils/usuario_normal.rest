@@ -1,11 +1,11 @@
 ### CONTACTOS DE UN USUARIO
-GET http://127.0.0.1:3000/api/contacto/usuario/29
+GET http://127.0.0.1:3000/api/contacto/usuario/27
 
 ### ELIMINAR USUARIO NORMAL 12
 DELETE http://127.0.0.1:3000/api/usuario_normal/34
 
 ### MOSTRAR USUARIO NORMAL 12
-GET http://127.0.0.1:3000/api/usuario_normal/29
+GET http://127.0.0.1:3000/api/contacto
 
 ### MOSTRAR USUARIO 12
 GET http://127.0.0.1:3000/api/usuario/12
@@ -20,16 +20,17 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "botas",
-	"nombre": "botas",
+	"ci": "gatos2",
+	"nombre": "gatos2",
 	"fecha_nac": "1978-11-17",
 	"genero": "masculino",
 	"direccion": "murillo",
-	"correo": "botas@gmail.com",
+	"correo": "gatos2@gmail.com",
 	"telefono": "1",
-	"nombre_usuario": "botas",
-	"contrasenia": "botas1234",
-	"id_administrador": "12"
+	"nombre_usuario": "gatos2",
+	"contrasenia": "gatos21234",
+	"reg": "2",
+	"id_administrador": "1"
 }
 
 ### modificar USUARIO NORMAL

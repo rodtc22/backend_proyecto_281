@@ -1,5 +1,5 @@
 ### LISTAR INTITUCIONES DE AYUDA
-GET http://127.0.0.1:3000/api/asiste
+GET http://127.0.0.1:3000/api/institucion_ayuda
 
 ### LISTAR INTITUCIONES DE AYUDA
 GET http://127.0.0.1:3000/api/recibe
