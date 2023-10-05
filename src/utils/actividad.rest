@@ -20,13 +20,13 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"nombre_actividad": "act3",
+	"nombre_actividad": "9092",
 	"tipo": "feria",
-	"descripcion": "Dedicado para las personas que",
+	"descripcion": "9090 para las personas que",
 	"fecha_ini": "2023-11-01",
 	"fecha_fin": "2023-11-01",
 	"hora": "12:30",
-	"id_administrador": "6"
+	"id_administrador": "7"
 }
 
 ### EDITAR actividad

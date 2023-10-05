@@ -9,17 +9,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // models.Recurso.belongsTo(models.Administrador, {
-      //   foreignKey: "id_administrador",
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      models.Recurso.belongsTo(models.Administrador, {
+        foreignKey: "id_administrador",
+        onDelete: 'CASCADE',
+      });
 
-      // models.Recurso.hasMany(models.Comentario, {
-      //   foreignKey: "id_recurso",
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      models.Recurso.hasMany(models.Comentario, {
+        foreignKey: "id_recurso",
+        onDelete: 'CASCADE'
+      });
     }
   }
   Recurso.init(

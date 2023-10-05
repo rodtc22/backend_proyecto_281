@@ -17,9 +17,40 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id_usuario",
         onDelete: 'CASCADE',
       });
-      // models.Usuario_normal.belongsTo(models.Administrador, {
-      //   foreignKey: "id_administrador",
-      //   onDelete: 'CASCADE',
+      models.Usuario_normal.belongsTo(models.Administrador, {
+        foreignKey: "id_administrador",
+        onDelete: 'CASCADE',
+      });
+      models.Usuario_normal.hasMany(models.Evaluacion, {
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE',
+      });
+      models.Usuario_normal.hasMany(models.Alerta, {
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE',
+      });
+
+      models.Usuario_normal.hasMany(models.Comentario, {
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE',
+      });
+
+      models.Usuario_normal.hasMany(models.Denuncia, {
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE',
+      });
+
+      // models.Usuario.belongsToMany(models.Contacto, {
+      //   through: "Agrega",
+      //   foreignKey: "id_usuario",
+      // });
+
+
+
+
+      // models.Usuario.belongsTo(models.Usuario_normal, {
+      //   foreignKey: "id_usuario",
+      //   onDelete: 'cascade',
       // });
     }
   }

@@ -17,9 +17,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"nombre_contacto": "c",
-	"telefono": "c",
-	"id_usuario": "12"
+	"nombre_contacto": "aa",
+	"telefono": "aa",
+	"id_usuario": "29"
 }
 
 ### EDITAR CONTACTO DE USUARIO

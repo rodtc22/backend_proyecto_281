@@ -2,7 +2,7 @@
 GET http://127.0.0.1:3000/api/administrador
 
 ### ELIMINAR ADMINISTRADOR 
-DELETE http://127.0.0.1:3000/api/administrador/5
+DELETE http://127.0.0.1:3000/api/administrador/7
 
 ### OBTENER ADMINISTRADOR
 GET http://127.0.0.1:3000/api/administrador/5
@@ -21,15 +21,15 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "5555",
-	"nombre": "zzz",
+	"ci": "9090",
+	"nombre": "9090",
 	"fecha_nac": "2000-09-06",
-	"genero": "zzz",
+	"genero": "9090",
 	"direccion": "los andes",
-	"correo": "zzz@gmail.com",
-	"telefono": "5555",
-	"nombre_usuario": "zzz",
-	"contrasenia": "zzz@zzz",
+	"correo": "9090@gmail.com",
+	"telefono": "9090",
+	"nombre_usuario": "9090",
+	"contrasenia": "9090@9090",
 	"rol": "colaborador"
 }
 

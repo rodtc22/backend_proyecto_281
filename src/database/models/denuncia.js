@@ -9,11 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // models.Denuncia.belongsTo(models.Usuario, {
-      //   foreignKey: "id_usuario",
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      models.Denuncia.belongsTo(models.Usuario_normal, {
+        foreignKey: "id_usuario",
+        onDelete: 'CASCADE',
+      });
 
       // models.Denuncia.belongsToMany(models.Administrador, {
       //   through: "Asiste",

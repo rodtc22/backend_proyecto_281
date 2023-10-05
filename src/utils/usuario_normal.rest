@@ -1,11 +1,11 @@
 ### CONTACTOS DE UN USUARIO
-GET http://127.0.0.1:3000/api/contacto/usuario/12
+GET http://127.0.0.1:3000/api/contacto/usuario/29
 
 ### ELIMINAR USUARIO NORMAL 12
-DELETE http://127.0.0.1:3000/api/usuario_normal/12
+DELETE http://127.0.0.1:3000/api/usuario_normal/29
 
 ### MOSTRAR USUARIO NORMAL 12
-GET http://127.0.0.1:3000/api/usuario_normal/12
+GET http://127.0.0.1:3000/api/usuario_normal/29
 
 ### MOSTRAR USUARIO 12
 GET http://127.0.0.1:3000/api/usuario/12
@@ -20,18 +20,18 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "yyy",
-	"nombre": "yyy",
+	"ci": "anita",
+	"nombre": "anita",
 	"fecha_nac": "1978-11-17",
 	"genero": "masculino",
 	"direccion": "murillo",
-	"correo": "yyy@gmail.com",
+	"correo": "anita@gmail.com",
 	"telefono": "1",
-	"nombre_usuario": "yyy",
-	"contrasenia": "yyy@1111"
+	"nombre_usuario": "anita",
+	"contrasenia": "anita1234"
 }
 
-### AGREGAR USUARIO NORMAL
+### modificar USUARIO NORMAL
 PUT http://127.0.0.1:3000/api/usuario_normal/13
 Content-Type: application/json
 Accept: application/json

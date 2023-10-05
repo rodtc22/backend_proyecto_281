@@ -2,7 +2,7 @@ import {
   Comentario,
   Administrador,
   Recurso,
-  Usuario,
+  Usuario_normal,
 } from "../database/models";
 
 export default {
@@ -11,7 +11,7 @@ export default {
       include: [
         { model: Administrador },
         { model: Recurso },
-        { model: Usuario },
+        { model: Usuario_normal },
       ],
     });
   },
@@ -48,7 +48,7 @@ export default {
       include: [
         { model: Administrador },
         { model: Recurso },
-        { model: Usuario },
+        { model: Usuario_normal },
       ],
     });
   },

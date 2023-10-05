@@ -9,11 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // models.Alerta.belongsTo(models.Usuario, {
-      //   foreignKey: "id_usuario",
-      //   onDelete: 'cascade',
-      //   onUpdate: 'cascade',
-      // });
+      models.Alerta.belongsTo(models.Usuario_normal, {
+        foreignKey: "id_usuario",
+        onUpdate: 'CASCADE',
+      });
 
       // models.Alerta.belongsToMany(models.Contacto, {
       //   through: "Notifica",

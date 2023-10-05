@@ -1,11 +1,11 @@
-import {Denuncia, Usuario} from "../database/models"
+import {Denuncia, Usuario_normal} from "../database/models"
 import models from "../database/models"
 
 export default {
     listarDenuncia: async () => {
         return await models.Denuncia.findAll({
             include: [
-                {model : Usuario}
+                {model : Usuario_normal}
             ]
         });
     },
@@ -26,7 +26,7 @@ export default {
     obtenerDenuncia: async (id) => {
         return await Denuncia.findByPk(id, {
             include: [
-                {model : Usuario}
+                {model : Usuario_normal}
             ]
         });
     },

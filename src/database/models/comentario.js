@@ -9,21 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // models.Comentario.belongsTo(models.Usuario, {
-      //   foreignKey: "id_usuario",
-      //   onDelete: "cascade",
-      //   onUpdate: "cascade",
-      // });
-      // models.Comentario.belongsTo(models.Administrador, {
-      //   foreignKey: "id_administrador",
-      //   onDelete: "cascade",
-      //   onUpdate: "cascade",
-      // });
-      // models.Comentario.belongsTo(models.Recurso, {
-      //   foreignKey: "id_recurso",
-      //   onDelete: "cascade",
-      //   onUpdate: "cascade",
-      // });
+      models.Comentario.belongsTo(models.Usuario_normal, {
+        foreignKey: "id_usuario",
+        onDelete: "CASCADE",
+      });
+      models.Comentario.belongsTo(models.Administrador, {
+        foreignKey: "id_administrador",
+        onDelete: "CASCADE",
+      });
+      models.Comentario.belongsTo(models.Recurso, {
+        foreignKey: "id_recurso",
+        onDelete: "CASCADE",
+      });
     }
   }
   Comentario.init(
