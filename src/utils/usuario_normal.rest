@@ -11,7 +11,7 @@ GET http://127.0.0.1:3000/api/contacto
 GET http://127.0.0.1:3000/api/usuario/12
 
 ### ELIMINAR USUARIO 12
-DELETE http://127.0.0.1:3000/api/usuario/12
+DELETE http://127.0.0.1:3000/api/usuario/28
 
 
 ### AGREGAR USUARIO NORMAL
@@ -20,17 +20,18 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "gatos2",
-	"nombre": "gatos2",
+	"ci": "gatos4",
+	"nombre": "gatos4",
 	"fecha_nac": "1978-11-17",
 	"genero": "masculino",
 	"direccion": "murillo",
-	"correo": "gatos2@gmail.com",
+	"correo": "gatos4@gmail.com",
 	"telefono": "1",
-	"nombre_usuario": "gatos2",
-	"contrasenia": "gatos21234",
-	"reg": "2",
+	"nombre_usuario": "gatos4",
+	"contrasenia": "gatos41234",
+	"reg": "1",
 	"id_administrador": "1"
+	
 }
 
 ### modificar USUARIO NORMAL

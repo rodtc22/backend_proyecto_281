@@ -19,7 +19,7 @@ Accept: application/json
 {
 	"nombre_contacto": "cri",
 	"telefono": "cri",
-	"id_usuario": "27"
+	"id_usuario": "28"
 }
 
 ### EDITAR CONTACTO DE USUARIO
@@ -34,7 +34,7 @@ Accept: application/json
 
 
 ### LISTAR CONTACTO DE USUARIO
-GET http://127.0.0.1:3000/api/contacto/usuario/42
+GET http://127.0.0.1:3000/api/contacto/usuario/28
 
 ### ELIMINAR CONTACTOS
 DELETE http://127.0.0.1:3000/api/contacto/16/usuario/36
