@@ -1,13 +1,16 @@
 ### LISTAR INTITUCIONES DE AYUDA
 GET http://127.0.0.1:3000/api/institucion_ayuda
 
-### LISTAR INTITUCIONES DE AYUDA
-GET http://127.0.0.1:3000/api/recibe
+### AGREGAR INSTITUCIONES DE AYUDA
+POST http://127.0.0.1:3000/api/institucion_ayuda
+Accept: application/json
+Content-Type: application/json
 
-### LISTAR INTITUCIONES DE AYUDA
-GET http://127.0.0.1:3000/api/notifica
-
-### LISTAR INTITUCIONES DE AYUDA
-GET http://127.0.0.1:3000/api/agrega
-
+{
+    "nombre_institucion" : "3",
+    "telefono" : "3",
+    "descripcion" : "3",
+    "url" : "3",
+    "id_administrador" : "2"
+}
 

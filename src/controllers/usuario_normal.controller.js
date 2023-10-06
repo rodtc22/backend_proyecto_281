@@ -3,8 +3,7 @@ import usuario_normalService from "../services/usuario_normal.service";
 export default {
   listar: async (req, res) => {
     try {
-      const usuarios_normal =
-        await usuario_normalService.listarUsuario_normal();
+      const usuarios_normal = await usuario_normalService.listarUsuario_normal();
       return res.status(200).json({ data: usuarios_normal });
     } catch (error) {
       return res.status(500).json({ message: error.message });
@@ -12,18 +11,12 @@ export default {
   },
   agregar: async (req, res) => {
     try {
-      const usuario_normal = await usuario_normalService.agregarUsuario_normal(
-        req.body
-      );
+      const usuario_normal = await usuario_normalService.agregarUsuario_normal(req.body);
+
       if (usuario_normal) {
-        return res.status(200).json({
-          message: "El Usuario_normal se ha agregado",
-          data: usuario_normal,
-        });
+        return res.status(201).json({message: "El Usuario_normal se ha agregado",data: usuario_normal,});
       } else {
-        return res.status(400).json({
-          error: "El Usuario_normal no se ha agregado",
-        });
+        return res.status(400).json({error: "El Usuario_normal no se ha agregado",});
       }
     } catch (error) {
       return res.status(500).json({ message: error.message });

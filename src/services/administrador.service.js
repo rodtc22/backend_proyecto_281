@@ -75,10 +75,11 @@ export default {
     });
 
     //ELIMINACION EN CASCADA
-    const uid = administrador.dataValues.id_usuario;
-    await usuarioService.borrarUsuario(uid);
-    await usuario_normalService.borrarUsuario_normalAdministrador(id);
-    await actividadService.borrarActividadAdministrador(id);
+    // const uid = administrador.dataValues.id_usuario;
+    // await usuarioService.borrarUsuario(uid);
+    // await usuario_normalService.borrarUsuario_normalAdministrador(id);
+    // await actividadService.borrarActividadAdministrador(id);
+
     // await recursoService.borrarRecursoAdministrador(id);
     // await institucion_ayudaService.borrarInstitucion_Ayuda(id);
 
@@ -95,7 +96,7 @@ export default {
         },
       ],
     });
-
+    
     const admin = ans[0];
     return admin;
   },

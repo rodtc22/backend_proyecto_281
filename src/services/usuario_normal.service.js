@@ -20,7 +20,9 @@ const getUsuario = (usuario_normal) => {
 export default {
   listarUsuario_normal: async () => {
     return await Usuario_normal.findAll({
-      include: [{ model: Usuario }],
+      include: [
+        { model: Usuario}
+      ],
     });
   },
   agregarUsuario_normal: async (nuevoUsuario_normal) => {
@@ -40,8 +42,12 @@ export default {
       id_usuario: nusuario.id_usuario,
       estado: "activo",
       fecha_registro: new Date().toISOString(),
-      id_administrador: nuevoUsuario_normal.id_administrador,
+      id_administrador: null,
     };
+    if (nuevoUsuario_normal.reg == '2') {
+      usuario_normal.id_administrador = nuevoUsuario_normal.id_administrador;
+    }
+    
     return await Usuario_normal.create(usuario_normal);
   },
   obtenerUsuario_normal: async (id) => {

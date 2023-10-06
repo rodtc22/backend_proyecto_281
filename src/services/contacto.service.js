@@ -1,5 +1,5 @@
 import {Agrega, Contacto, Usuario_normal} from "../database/models"
-
+import agregaService from "./agrega.service";
 export default {
     listarContacto: async () => {
         return await Contacto.findAll({
@@ -10,7 +10,11 @@ export default {
     },
     agregarContacto: async (nuevoContacto) => {
         const contacto = await Contacto.create(nuevoContacto);
-        await Agrega.create(contacto.dataValues);
+        // usamos el modelo de sequelize
+        // await Agrega.create(contacto.dataValues);
+        
+        // usamos el servicio
+        //await agregaService.agregarAgrega(contacto.dataValues);
         return contacto;
     },
     obtenerContacto: async (id) => {

@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       });
 
 
-      models.Usuario.belongsToMany(models.Contacto, {
+      models.Usuario_normal.belongsToMany(models.Contacto, {
         through: models.Agrega,
         foreignKey: "id_usuario",
         onDelete: 'CASCADE',

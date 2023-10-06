@@ -20,15 +20,15 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "gatos4",
-	"nombre": "gatos4",
+	"ci": "101",
+	"nombre": "101",
 	"fecha_nac": "1978-11-17",
-	"genero": "masculino",
+	"genero": "femenino",
 	"direccion": "murillo",
-	"correo": "gatos4@gmail.com",
+	"correo": "101@gmail.com",
 	"telefono": "1",
-	"nombre_usuario": "gatos4",
-	"contrasenia": "gatos41234",
+	"nombre_usuario": "101",
+	"contrasenia": "1011234",
 	"reg": "1",
 	"id_administrador": "1"
 	

@@ -172,8 +172,8 @@ CREATE TABLE IF NOT EXISTS `Evaluacions` (
 
 -- La exportación de datos fue deseleccionada.
 
--- Volcando estructura para tabla proyecto_inf281.institucion_ayudas
-CREATE TABLE IF NOT EXISTS `Institucion_ayudas` (
+-- Volcando estructura para tabla proyecto_inf281.Institucion_Ayudas
+CREATE TABLE IF NOT EXISTS `Institucion_Ayudas` (
   `id_inst_ayuda` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_institucion` varchar(255) DEFAULT NULL,
   `telefono` varchar(255) DEFAULT NULL,
@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `Institucion_ayudas` (
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id_inst_ayuda`),
   KEY `id_administrador` (`id_administrador`),
-  CONSTRAINT `institucion_ayudas_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `Administradors` (`id_administrador`) ON DELETE CASCADE
+  CONSTRAINT `Institucion_Ayudas_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `Administradors` (`id_administrador`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- La exportación de datos fue deseleccionada.
@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `Recibes` (
   PRIMARY KEY (`id_recibe`),
   KEY `id_inst_ayuda` (`id_inst_ayuda`),
   KEY `id_alerta` (`id_alerta`),
-  CONSTRAINT `recibes_ibfk_1` FOREIGN KEY (`id_inst_ayuda`) REFERENCES `Institucion_ayudas` (`id_inst_ayuda`) ON DELETE CASCADE,
+  CONSTRAINT `recibes_ibfk_1` FOREIGN KEY (`id_inst_ayuda`) REFERENCES `Institucion_Ayudas` (`id_inst_ayuda`) ON DELETE CASCADE,
   CONSTRAINT `recibes_ibfk_2` FOREIGN KEY (`id_alerta`) REFERENCES `Alertas` (`id_alerta`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

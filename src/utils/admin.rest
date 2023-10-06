@@ -21,15 +21,15 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"ci": "9091",
-	"nombre": "9091",
+	"ci": "100",
+	"nombre": "100",
 	"fecha_nac": "2000-09-06",
-	"genero": "9091",
+	"genero": "100",
 	"direccion": "los andes",
-	"correo": "9091@gmail.com",
-	"telefono": "9091",
-	"nombre_usuario": "9091",
-	"contrasenia": "9091@9091",
+	"correo": "100@gmail.com",
+	"telefono": "100",
+	"nombre_usuario": "100",
+	"contrasenia": "100@100",
 	"rol": "administrador"
 }
 
